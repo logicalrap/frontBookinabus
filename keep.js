@@ -1,16 +1,10 @@
 export default function Home() {
   return `
-    <section class="max-w-[900px] mx-auto mt-8 p-6 app-card">
+    <section class="max-w-[900px] mx-auto mt-8 bg-[#1f05b3] p-6 rounded-xl shadow-lg text-white">
 
-      <!-- Header -->
-      <header class="text-center mb-8">
-        <h1 class="text-2xl font-semibold">
-          BookinaBus
-        </h1>
-        <h3 class="mt-2 px-4 py-2 rounded-md text-lg font-medium bg-black">
-          Event Transport Booking
-        </h3>
-      </header>
+      <h1 class="text-2xl font-semibold mb-6 text-center">
+        BookinaBus Charter Booking
+      </h1>
 
       <form id="bookingForm" class="space-y-6">
 
@@ -21,7 +15,7 @@ export default function Home() {
             Trip Details
           </h3>
 
-          <!-- Event Type -->
+          <!-- Event type -->
           <div class="mb-5">
             <label class="block mb-2 font-medium text-gray-200">
               Event Type
@@ -41,7 +35,7 @@ export default function Home() {
             </select>
           </div>
 
-          <!-- Pickup & Drop-off -->
+          <!-- Pickup & Dropoff -->
           <div class="flex flex-col md:flex-row gap-5 mb-5">
             <div class="flex-1">
               <label class="block mb-2 font-medium text-gray-200">
@@ -98,11 +92,10 @@ export default function Home() {
           <button
             type="button"
             id="nextBtn"
-            class="w-full p-3 rounded-lg font-medium transition hover:opacity-90 btn-primary"
+            class="w-full bg-[#0a60a7] p-3 rounded-lg font-medium hover:opacity-90 transition"
           >
             Next
           </button>
-
         </div>
 
         <!-- STEP 2 -->
@@ -153,14 +146,14 @@ export default function Home() {
             <button
               type="button"
               id="backBtn"
-              class="flex-1 p-3 rounded-lg transition hover:opacity-90 bg-gray-600 text-black"
+              class="flex-1 bg-gray-600 p-3 rounded-lg hover:opacity-90 transition"
             >
               Back
             </button>
 
             <button
               type="submit"
-              class="flex-1 p-3 rounded-lg font-medium transition hover:opacity-90 btn-primary"
+              class="flex-1 bg-[#0a60a7] p-3 rounded-lg font-medium hover:opacity-90 transition"
             >
               Request Quote
             </button>

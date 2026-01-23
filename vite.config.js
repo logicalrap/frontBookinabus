@@ -1,5 +1,8 @@
-import { defineConfig } from 'vite'
+  import { defineConfig } from "vite";
+  import tailwindcss from "@tailwindcss/vite";
 
-export default defineConfig({
-  root: '.'
-})
+  // Export a single Vite config
+  export default defineConfig({
+    root: ".",            // optional, sets the project root
+    plugins: [tailwindcss()]  // add Tailwind plugin
+  });
