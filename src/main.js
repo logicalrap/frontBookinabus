@@ -21,11 +21,35 @@ window.addEventListener("hashchange", router);
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker
-      .register("/sw.js")
-      .then(() => console.log("✅ Service Worker registered"))
-      .catch((err) =>
-        console.log("❌ Service Worker failed:", err)
-      );
+      .register("./sw.js")
+      .then((registration) => {
+        console.log("✅ Service Worker registered:", registration.scope);
+      })
+      .catch((err) => {
+        console.error("❌ Service Worker failed:", err);
+      });
   });
 }
+
+
+async function forceUpdate() {
+  if ("serviceWorker" in navigator) {
+    const registrations = await navigator.serviceWorker.getRegistrations();
+
+    for (const reg of registrations) {
+      await reg.unregister();
+    }
+  }
+
+  // Reload WITHOUT cache
+  window.location.reload(true);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const updateBtn = document.getElementById("updateBtn");
+
+  if (updateBtn) {
+    updateBtn.addEventListener("click", forceUpdate);
+  }
+});
 
