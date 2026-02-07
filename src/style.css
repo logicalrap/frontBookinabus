@@ -14,13 +14,15 @@
 
   /* Text */
   --color-text-default: rgba(255, 255, 255, 0.87);
-  --color-text-dark: #213547;
+  --color-text-dark: #47a5f8ff;
 
   /* UI tokens */
   --radius-card: 0.75rem;   /* 12px */
   --radius-button: 0.5rem;  /* 8px */
 
   --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+  
 }
 
 /* ======================================================

@@ -2,15 +2,6 @@ export default function Home() {
   return `
     <section class="max-w-[900px] mx-auto mt-8 p-6 app-card">
 
-      <!-- Header -->
-      <header class="text-center mb-8">
-        <h1 class="text-2xl font-semibold">
-          BookinaBus
-        </h1>
-        <h3 class="mt-2 px-4 py-2 rounded-md text-lg font-medium bg-black">
-          Event Transport Booking
-        </h3>
-      </header>
 
       <form id="bookingForm" class="space-y-6">
 

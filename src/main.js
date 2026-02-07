@@ -1,23 +1,32 @@
 import "./style.css";
 import "./styles/booking.css";
 
-//import { initBookingForm } from "./logic/bookingForm.js";
-
-
 import { loadRoute } from "./router.js";
+import AppShell from "./components/AppShell.js";
 
-// Router handler
-function router() {
+// =============================
+// ROUTER
+// =============================
+async function router() {
   const hash = window.location.hash.replace("#", "");
-  const path = hash || "/login"; // default page
-  loadRoute(path);
+  const path = hash || "/home";
+
+  // wait for route
+  const pageContent = await loadRoute(path);
+
+  const app = document.getElementById("app");
+  app.innerHTML = AppShell(pageContent);
 }
 
-// Initialize SPA
+
+// Run on load + navigation
 window.addEventListener("load", router);
 window.addEventListener("hashchange", router);
 
-// Register Service Worker
+
+// =============================
+// SERVICE WORKER
+// =============================
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker
@@ -32,6 +41,9 @@ if ("serviceWorker" in navigator) {
 }
 
 
+// =============================
+// FORCE UPDATE BUTTON (PWA)
+// =============================
 async function forceUpdate() {
   if ("serviceWorker" in navigator) {
     const registrations = await navigator.serviceWorker.getRegistrations();
@@ -41,7 +53,6 @@ async function forceUpdate() {
     }
   }
 
-  // Reload WITHOUT cache
   window.location.reload(true);
 }
 
@@ -52,4 +63,3 @@ document.addEventListener("DOMContentLoaded", () => {
     updateBtn.addEventListener("click", forceUpdate);
   }
 });
-

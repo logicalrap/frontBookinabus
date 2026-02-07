@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>BookinaBus</title>
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#020318" />
+
+    <!-- Tailwind CDN (OK for now; Vite can replace later) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- App Theme -->
+    <style>
+      /* ===== Global Background (mobile-app feel) ===== */
+      body {
+        min-height: 100vh;
+        background: radial-gradient(
+          circle at top,
+          #0a1a5c 0%,
+          #050b2e 45%,
+          #020318 100%
+        );
+        color: #eaeaea;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+
+      /* ===== App Card (BLUE, not black) ===== */
+      .app-card {
+        background: linear-gradient(
+          180deg,
+          #1f2bd8 0%,
+          #0b1370 100%
+        );
+        border-radius: 1.25rem;
+        box-shadow:
+          0 20px 40px rgba(0, 0, 0, 0.6),
+          inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+      }
+
+      /* ===== Section Pill ===== */
+      .section-pill {
+        background: linear-gradient(
+          180deg,
+          #0d1a8f,
+          #070f4a
+        );
+        color: #ff7a00;
+        padding: 0.75rem 1.25rem;
+        border-radius: 9999px;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-align: center;
+      }
+
+      /* ===== Primary Button ===== */
+      .btn-primary {
+        background: linear-gradient(180deg, #0b5cff, #063a9f);
+        color: white;
+        border-radius: 9999px;
+        box-shadow: 0 10px 25px rgba(11, 92, 255, 0.4);
+      }
+    </style>
+  </head>
+
+  <body class="flex justify-center px-4 py-8">
+
+    <!-- APP SHELL -->
+    <div class="w-full max-w-md space-y-6">
+
+      <!-- Top App Bar -->
+      <header class="app-card px-5 py-4 flex items-center justify-between">
+
+        <!-- Left: Brand + Tagline -->
+        <div class="flex items-center gap-3">
+
+          <span class="text-2xl">🚌</span>
+
+          <div class="leading-tight">
+            <div class="text-lg font-semibold tracking-wide text-white">
+              BOOKINABUS
+            </div>
+
+            <div class="text-xs uppercase tracking-widest text-orange-400">
+              Event Transport Booking
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Profile -->
+        <div
+          class="w-9 h-9 rounded-full bg-white/15 flex items-center justify-center text-sm"
+        >
+          👤
+        </div>
+
+      </header>
+
+      <!-- App Content -->
+      <main id="app" class="app-card p-6 space-y-6">
+
+        <div class="section-pill">
+          EVENT TRANSPORT BOOKING
+        </div>
+
+        <p class="text-center text-gray-300">
+          Loading…
+        </p>
+
+      </main>
+
+    </div>
+
+    <!-- Main SPA Script -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

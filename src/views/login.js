@@ -4,9 +4,7 @@ export default function Login() {
 
       <!-- Header -->
       <header class="text-center mb-8">
-        <h1 class="text-2xl font-semibold">
-          BookinaBus
-        </h1>
+        
         <p class="mt-2 text-sm text-gray-200">
           Login to continue
         </p>

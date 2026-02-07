@@ -1,47 +1,57 @@
 import Login from "./views/login.js";
 import Home from "./views/home.js";
 import Drivers from "./views/drivers.js";
+import DriverDashboard from "./views/driverDashboard.js";
+import DriverProfile from "./views/driverProfile.js";
 import { initBookingForm } from "./logic/bookingForm.js";
 
-// Route table
+// route table
 const routes = {
   "/login": Login,
   "/home": Home,
-  "/drivers": Drivers
+  "/drivers": Drivers,
+  "/driver-dashboard": DriverDashboard,
+  "/profile": DriverProfile
 };
 
 export async function loadRoute(path) {
-  const app = document.getElementById("app");
 
-  // Default route
-  if (!path || path === "/") path = "/login";
+  if (!path || path === "/") path = "/home";
 
   // 404
   if (!routes[path]) {
-    app.innerHTML = "<h2>404 – Page not found</h2>";
-    return;
+    return "<h2 class='text-center'>404 – Page not found</h2>";
   }
 
-  // 🔥 Drivers page (needs API data)
+  // ===============================
+  // DRIVERS (fetch API)
+  // ===============================
   if (path === "/drivers") {
     try {
       const res = await fetch("https://jsonplaceholder.typicode.com/users");
       const data = await res.json();
-      app.innerHTML = Drivers(data);
-      return;
+      return Drivers(data); // RETURN instead of inject
     } catch (err) {
-      app.innerHTML = "<p>Failed to load drivers.</p>";
-      return;
+      return "<p>Failed to load drivers.</p>";
     }
   }
 
-  // 🔥 Home page (needs booking form logic)
+  // ===============================
+  // HOME
+  // ===============================
   if (path === "/home") {
-    app.innerHTML = Home();
-    initBookingForm(); // attach logic AFTER render
-    return;
+    const html = Home();
+
+    // delay JS attach until DOM inserted
+    setTimeout(() => {
+      initBookingForm();
+    }, 0);
+
+    return html;
   }
 
-  // Normal pages (Login)
-  app.innerHTML = routes[path]();
+  // ===============================
+  // LOGIN + others
+  // ===============================
+  return routes[path]();
 }
