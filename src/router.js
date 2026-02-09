@@ -8,6 +8,10 @@ import SendQuote from "./views/driver/sendQuote.js";
 import Notifications from "./views/driver/notifications.js";
 import Messages from "./views/driver/messages.js";
 import MyTrips from "./views/driver/myTrips.js";
+import CustomerProfile from "./views/customer/customerProfile.js";
+import CustomerNotifications from "./views/customer/customerNotifications.js";
+import CustomerMessages from "./views/customer/customerMessages.js";
+import MyBookings from "./views/customer/myBookings.js";
 import { initBookingForm } from "./logic/bookingForm.js";
 import { initTripsTabs } from "./logic/trips.js";
 
@@ -18,6 +22,10 @@ const routes = {
   "/drivers": Drivers,
   "/driver-dashboard": DriverDashboard,
   "/profile": DriverProfile,
+  "/customer-profile": CustomerProfile,
+  "/customer-notifications": CustomerNotifications,
+  "/customer-messages": CustomerMessages,
+  "/my-bookings": MyBookings,
   "/notifications": Notifications,
   "/messages": Messages,
   "/my-trips": MyTrips
@@ -26,6 +34,25 @@ const routes = {
 export async function loadRoute(path) {
 
   if (!path || path === "/") path = "/home";
+
+  // Set role based on current path so shared menu routes correctly
+  const driverPrefixes = ["/driver-dashboard", "/profile", "/notifications", "/messages", "/my-trips", "/drivers"];
+  const customerPrefixes = ["/home", "/customer-profile", "/customer-notifications", "/customer-messages", "/my-bookings"];
+  const isDriverRoute =
+    driverPrefixes.some((p) => path === p) ||
+    path.startsWith("/booking/") ||
+    path.startsWith("/send-quote/");
+  const isCustomerRoute = customerPrefixes.some((p) => path === p);
+
+  try {
+    if (isDriverRoute) {
+      localStorage.setItem("appRole", "driver");
+    } else if (isCustomerRoute) {
+      localStorage.setItem("appRole", "customer");
+    }
+  } catch {
+    // ignore storage errors
+  }
 
   // Dynamic booking details route
   if (path.startsWith("/booking/")) {
@@ -76,6 +103,19 @@ export async function loadRoute(path) {
   // ===============================
   if (path === "/my-trips") {
     const html = MyTrips();
+
+    setTimeout(() => {
+      initTripsTabs();
+    }, 0);
+
+    return html;
+  }
+
+  // ===============================
+  // CUSTOMER BOOKINGS
+  // ===============================
+  if (path === "/my-bookings") {
+    const html = MyBookings();
 
     setTimeout(() => {
       initTripsTabs();

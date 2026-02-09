@@ -24,5 +24,6 @@ export function initTripsTabs() {
     tab.addEventListener("click", () => setActive(tab.dataset.tripTab));
   });
 
-  setActive("new");
+  const defaultTab = document.querySelector("[data-trip-default]")?.dataset.tripDefault;
+  setActive(defaultTab || tabs[0].dataset.tripTab);
 }
