@@ -1,47 +1,6 @@
-export default function DriverDashboard() {
-  const tripRequests = [
-    {
-      id: "REQ-2041",
-      customer: "Amina Yusuf",
-      eventType: "Wedding",
-      date: "Feb 16, 2026",
-      time: "8:30 AM",
-      pickup: "Ikeja, Lagos",
-      dropoff: "Lekki Phase 1",
-      passengers: 42
-    },
-    {
-      id: "REQ-2042",
-      customer: "David Okoye",
-      eventType: "Corporate Event",
-      date: "Feb 18, 2026",
-      time: "6:00 AM",
-      pickup: "Maryland, Lagos",
-      dropoff: "Victoria Island",
-      passengers: 30
-    },
-    {
-      id: "REQ-2043",
-      customer: "Grace Bello",
-      eventType: "Church Program",
-      date: "Feb 20, 2026",
-      time: "7:15 AM",
-      pickup: "Surulere, Lagos",
-      dropoff: "Ikeja, Lagos",
-      passengers: 55
-    },
-    {
-      id: "REQ-2044",
-      customer: "Samuel Ade",
-      eventType: "School Trip",
-      date: "Feb 22, 2026",
-      time: "9:00 AM",
-      pickup: "Yaba, Lagos",
-      dropoff: "Badagry",
-      passengers: 48
-    }
-  ];
+import { bookingRequests } from "../data/bookingRequests.js";
 
+export default function DriverDashboard() {
   return `
     <section class="max-w-[900px] mx-auto mt-8 p-6 app-card space-y-6">
 
@@ -71,10 +30,11 @@ export default function DriverDashboard() {
           </header>
 
           <div class="space-y-4">
-            ${tripRequests
+            ${bookingRequests
               .map(
                 (trip) => `
-          <div class="bg-white text-black rounded-lg shadow-md p-5 flex flex-col gap-4">
+          <a class="block bg-white text-black rounded-lg shadow-md p-5 flex flex-col gap-4 transition hover:shadow-lg border border-transparent hover:border-[var(--color-primary-action)]"
+             href="#/booking/${trip.id}">
             <div class="flex items-center justify-between">
               <div class="text-sm font-semibold text-blue-700">${trip.id}</div>
               <span class="text-xs px-2 py-1 rounded-full bg-blue-100 text-blue-800 font-semibold">
@@ -92,14 +52,14 @@ export default function DriverDashboard() {
             </div>
 
             <div class="flex gap-3">
-              <button class="flex-1 p-3 rounded-lg font-medium btn-accent transition">
+              <button class="flex-1 p-3 rounded-lg font-medium btn-accent transition" onclick="event.stopPropagation(); event.preventDefault();">
                 Call
               </button>
-              <button class="flex-1 p-3 rounded-lg font-medium bg-gray-200 text-gray-800 hover:bg-gray-300 transition">
+              <button class="flex-1 p-3 rounded-lg font-medium bg-gray-200 text-gray-800 hover:bg-gray-300 transition" onclick="event.stopPropagation(); event.preventDefault();">
                 Decline
               </button>
             </div>
-          </div>
+          </a>
         `
               )
               .join("")}
@@ -109,3 +69,6 @@ export default function DriverDashboard() {
     </section>
   `;
 }
+
+
+
