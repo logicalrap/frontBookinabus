@@ -1,4 +1,4 @@
-import MenuColumn from "../components/MenuColumn.js";
+import MenuColumn from "../../components/MenuColumn.js";
 
 export default function DriverProfile() {
   const driver = {
@@ -25,7 +25,7 @@ export default function DriverProfile() {
         <div class="flex-1 space-y-6 min-w-0">
           <header class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div>
-              <h2 class="text-2xl font-semibold">Driver Profile</h2>
+              <h2 class="text-2xl font-semibold text-[var(--color-secondary-heading)]">Driver Profile</h2>
               <p class="mt-2 text-gray-200">Keep your details accurate for fast bookings.</p>
             </div>
             <button class="px-4 py-2 rounded-lg font-semibold btn-primary transition">Edit Profile</button>
@@ -78,6 +78,7 @@ export default function DriverProfile() {
     </section>
   `;
 }
+
 
 
 

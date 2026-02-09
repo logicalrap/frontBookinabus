@@ -1,4 +1,4 @@
-import MenuColumn from "../components/MenuColumn.js";
+import MenuColumn from "../../components/MenuColumn.js";
 
 export default function Messages() {
   const threads = [
@@ -40,7 +40,7 @@ export default function Messages() {
         <div class="flex-1 space-y-6">
           <header class="flex flex-col gap-2">
             <div>
-              <h2 class="text-2xl font-semibold">Messages</h2>
+              <h2 class="text-2xl font-semibold text-[var(--color-secondary-heading)]">Messages</h2>
             </div>
           </header>
 
@@ -89,3 +89,4 @@ export default function Messages() {
     </section>
   `;
 }
+

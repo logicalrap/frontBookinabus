@@ -1,12 +1,25 @@
+function getLoginRole() {
+  const hash = window.location.hash || "";
+  const query = hash.split("?")[1] || "";
+  const params = new URLSearchParams(query);
+  return params.get("role") || "user";
+}
+
 export default function Login() {
+  const role = getLoginRole();
+  const title = role === "driver" ? "Driver Login" : "User Login";
+  const helper = role === "driver"
+    ? "Login to manage trip requests and quotes."
+    : "Login to book and manage your trips.";
+
   return `
     <section class="max-w-[420px] mx-auto mt-16 p-6 app-card">
 
       <!-- Header -->
       <header class="text-center mb-8">
-        
+        <h2 class="text-2xl font-semibold">${title}</h2>
         <p class="mt-2 text-sm text-gray-200">
-          Login to continue
+          ${helper}
         </p>
       </header>
 

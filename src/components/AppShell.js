@@ -23,7 +23,7 @@
               👤
             </summary>
             <div class="absolute right-0 mt-3 w-48 rounded-xl menu-accent shadow-lg overflow-hidden">
-              <a class="block px-4 py-3 text-sm font-medium transition" href="#/login">Login as user</a>
+              <a class="block px-4 py-3 text-sm font-medium transition" href="#/home">Login as user</a>
               <a class="block px-4 py-3 text-sm font-medium transition" href="#/driver-dashboard">Login as driver</a>
             </div>
           </details>

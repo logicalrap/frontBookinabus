@@ -1,13 +1,13 @@
 import Login from "./views/login.js";
 import Home from "./views/home.js";
-import Drivers from "./views/drivers.js";
-import DriverDashboard from "./views/driverDashboard.js";
-import DriverProfile from "./views/driverProfile.js";
-import BookingDetails from "./views/bookingDetails.js";
-import SendQuote from "./views/sendQuote.js";
-import Notifications from "./views/notifications.js";
-import Messages from "./views/messages.js";
-import MyTrips from "./views/myTrips.js";
+import Drivers from "./views/driver/drivers.js";
+import DriverDashboard from "./views/driver/driverDashboard.js";
+import DriverProfile from "./views/driver/driverProfile.js";
+import BookingDetails from "./views/driver/bookingDetails.js";
+import SendQuote from "./views/driver/sendQuote.js";
+import Notifications from "./views/driver/notifications.js";
+import Messages from "./views/driver/messages.js";
+import MyTrips from "./views/driver/myTrips.js";
 import { initBookingForm } from "./logic/bookingForm.js";
 import { initTripsTabs } from "./logic/trips.js";
 

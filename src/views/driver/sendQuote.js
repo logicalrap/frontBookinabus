@@ -1,4 +1,4 @@
-import { bookingRequests } from "../data/bookingRequests.js";
+import { bookingRequests } from "../../data/bookingRequests.js";
 
 export default function SendQuote(requestId) {
   const booking = bookingRequests.find((item) => item.id === requestId);

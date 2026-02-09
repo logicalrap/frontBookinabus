@@ -1,4 +1,4 @@
-import MenuColumn from "../components/MenuColumn.js";
+import MenuColumn from "../../components/MenuColumn.js";
 
 export default function MyTrips() {
   const trips = [
@@ -88,7 +88,7 @@ export default function MyTrips() {
         <div class="flex-1 space-y-6">
           <header class="flex flex-col gap-2">
             <div>
-              <h2 class="text-2xl font-semibold">My Trips</h2>
+              <h2 class="text-2xl font-semibold text-[var(--color-secondary-heading)]">My Trips</h2>
             </div>
           </header>
 
@@ -149,3 +149,4 @@ export default function MyTrips() {
     </section>
   `;
 }
+

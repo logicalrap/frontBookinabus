@@ -13,8 +13,9 @@
   --color-background: #f9f9f9;
   --color-primary-bg: #1f05b3;
   --color-secondary: #0f3e7a;
-  --color-primary-action-hover: #094f8a;
+  --color-primary-action-hover: #f97316;
   --color-secondary-hover: #0c3263;
+  --color-secondary-heading: #f97316;
 
   /* Text */
   --color-text-default: rgba(255, 255, 255, 0.87);

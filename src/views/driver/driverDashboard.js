@@ -1,5 +1,5 @@
-import { bookingRequests } from "../data/bookingRequests.js";
-import MenuColumn from "../components/MenuColumn.js";
+import { bookingRequests } from "../../data/bookingRequests.js";
+import MenuColumn from "../../components/MenuColumn.js";
 
 export default function DriverDashboard() {
   return `
@@ -10,7 +10,7 @@ export default function DriverDashboard() {
 
         <div class="flex-1 space-y-4">
           <header>
-            <h2 class="text-2xl font-semibold">Driver Dashboard</h2>
+            <h2 class="text-2xl font-semibold text-[var(--color-secondary-heading)]">Driver Dashboard</h2>
             <p class="mt-2 text-gray-200">Incoming trip requests waiting for action</p>
           </header>
 
@@ -54,6 +54,7 @@ export default function DriverDashboard() {
     </section>
   `;
 }
+
 
 
 

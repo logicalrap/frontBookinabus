@@ -7,10 +7,11 @@ export default function Home() {
 
         <!-- STEP 1 -->
         <div class="step block" data-step="1">
+<h3 class="bg-white/10 px-4 py-2 rounded-md mb-6 text-lg font-medium text-[var(--color-secondary-heading)]">
+  Trip Details
+</h3>
 
-          <h3 class="bg-black px-4 py-2 rounded-md mb-6 text-lg font-medium">
-            Trip Details
-          </h3>
+
 
           <!-- Event Type -->
           <div class="mb-5">
@@ -89,7 +90,7 @@ export default function Home() {
           <button
             type="button"
             id="nextBtn"
-            class="w-full p-3 rounded-lg font-medium transition hover:opacity-90 btn-primary"
+            class="w-full p-3 rounded-lg font-medium transition hover:opacity-90 btn-accent"
           >
             Next
           </button>
@@ -99,7 +100,7 @@ export default function Home() {
         <!-- STEP 2 -->
         <div class="step hidden" data-step="2">
 
-          <h3 class="bg-black px-4 py-2 rounded-md mb-6 text-lg font-medium">
+          <h3 class="bg-white/10 px-4 py-2 rounded-md mb-6 text-lg font-medium text-[var(--color-secondary-heading)]">
             Contact Information
           </h3>
 
@@ -144,14 +145,14 @@ export default function Home() {
             <button
               type="button"
               id="backBtn"
-              class="flex-1 p-3 rounded-lg transition hover:opacity-90 bg-gray-600 text-black"
+              class="flex-1 p-3 rounded-lg font-medium transition hover:opacity-90 btn-accent"
             >
               Back
             </button>
 
             <button
               type="submit"
-              class="flex-1 p-3 rounded-lg font-medium transition hover:opacity-90 btn-primary"
+              class="flex-1 p-3 rounded-lg font-medium transition hover:opacity-90 btn-accent"
             >
               Request Quote
             </button>

@@ -1,4 +1,4 @@
-import MenuColumn from "../components/MenuColumn.js";
+import MenuColumn from "../../components/MenuColumn.js";
 
 export default function Notifications() {
   const notifications = [
@@ -47,7 +47,7 @@ export default function Notifications() {
         <div class="flex-1 space-y-6">
           <header class="flex flex-col gap-2">
             <div>
-              <h2 class="text-2xl font-semibold">Notifications</h2>
+              <h2 class="text-2xl font-semibold text-[var(--color-secondary-heading)]">Notifications</h2>
               <p class="mt-2 text-gray-200">Stay updated on new bookings and quote activity.</p>
             </div>
           </header>
@@ -89,3 +89,4 @@ export default function Notifications() {
     </section>
   `;
 }
+
