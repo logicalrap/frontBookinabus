@@ -1,3 +1,5 @@
+import MenuColumn from "../components/MenuColumn.js";
+
 export default function Notifications() {
   const notifications = [
     {
@@ -40,46 +42,32 @@ export default function Notifications() {
   return `
     <section class="max-w-[900px] mx-auto mt-8 p-6 app-card">
       <div class="flex items-start gap-4">
-        <div class="sticky top-4 z-20 self-start">
-          <details class="relative">
-            <summary class="list-none cursor-pointer inline-flex items-center justify-center w-11 h-11 rounded-xl bg-white/15 hover:bg-white/25 transition ring-1 ring-white/20 shadow-lg">
-              <span class="grid grid-cols-2 gap-1">
-                <span class="w-1.5 h-1.5 rounded-full bg-[var(--brand-accent)]"></span>
-                <span class="w-1.5 h-1.5 rounded-full bg-[var(--brand-accent)]"></span>
-                <span class="w-1.5 h-1.5 rounded-full bg-[var(--brand-accent)]"></span>
-                <span class="w-1.5 h-1.5 rounded-full bg-[var(--brand-accent)]"></span>
-              </span>
-            </summary>
-            <div class="absolute left-0 mt-3 w-52 rounded-2xl menu-accent shadow-xl overflow-hidden">
-              <a class="block px-4 py-3 text-sm font-medium transition" href="#/profile">Profile</a>
-              <a class="block px-4 py-3 text-sm font-medium transition" href="#/notifications">Notifications</a>
-              <a class="block px-4 py-3 text-sm font-medium transition" href="#/my-trips">My Trips</a>
-            </div>
-          </details>
-        </div>
+        ${MenuColumn()}
 
         <div class="flex-1 space-y-6">
-          <header class="flex flex-col gap-4">
+          <header class="flex flex-col gap-2">
             <div>
               <h2 class="text-2xl font-semibold">Notifications</h2>
               <p class="mt-2 text-gray-200">Stay updated on new bookings and quote activity.</p>
             </div>
+          </header>
 
-            <div class="flex items-center gap-3">
-              <a class="flex-1 px-4 py-3 rounded-xl font-semibold btn-accent shadow-sm text-center" href="#/notifications">
+          <div class="sticky top-0 z-10 bg-[var(--color-primary)] shadow-lg">
+            <div class="flex justify-center gap-2 px-4 py-3">
+              <a class="flex-1 max-w-[200px] px-4 py-2 rounded-lg font-semibold btn-accent transition text-center" href="#/notifications">
                 Notifications
               </a>
-              <a class="flex-1 px-4 py-3 rounded-xl font-semibold bg-white/15 text-white hover:bg-white/20 transition text-center" href="#/messages">
+              <a class="flex-1 max-w-[200px] px-4 py-2 rounded-lg font-semibold  transition text-center" href="#/messages">
                 Messages
               </a>
             </div>
+          </div>
 
-            <div class="flex justify-end">
-              <button class="px-4 py-2 rounded-lg font-semibold btn-accent">Mark all as read</button>
-            </div>
-          </header>
+          <div class="flex justify-end">
+            <button class="px-4 py-2 rounded-lg font-semibold btn-accent">Mark all as read</button>
+          </div>
 
-          <div class="space-y-4">
+          <div class="space-y-4 mt-2">
             ${notifications
               .map(
                 (note) => `
@@ -101,5 +89,3 @@ export default function Notifications() {
     </section>
   `;
 }
-
-

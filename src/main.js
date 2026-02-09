@@ -23,6 +23,18 @@ async function router() {
 window.addEventListener("load", router);
 window.addEventListener("hashchange", router);
 
+// Close open menus when clicking/tapping outside
+function closeMenusOnOutsideClick(event) {
+  document.querySelectorAll("details[open]").forEach((detail) => {
+    if (!detail.contains(event.target)) {
+      detail.removeAttribute("open");
+    }
+  });
+}
+
+document.addEventListener("click", closeMenusOnOutsideClick);
+document.addEventListener("touchstart", closeMenusOnOutsideClick);
+
 
 // =============================
 // SERVICE WORKER

@@ -1,3 +1,5 @@
+import MenuColumn from "../components/MenuColumn.js";
+
 export default function MyTrips() {
   const trips = [
     {
@@ -81,63 +83,50 @@ export default function MyTrips() {
   return `
     <section class="max-w-[900px] mx-auto mt-8 p-6 app-card">
       <div class="flex items-start gap-4">
-        <div class="sticky top-4 z-20 self-start">
-          <details class="relative">
-            <summary class="list-none cursor-pointer inline-flex items-center justify-center w-11 h-11 rounded-xl bg-white/15 hover:bg-white/25 transition ring-1 ring-white/20 shadow-lg">
-              <span class="grid grid-cols-2 gap-1">
-                <span class="w-1.5 h-1.5 rounded-full bg-[var(--brand-accent)]"></span>
-                <span class="w-1.5 h-1.5 rounded-full bg-[var(--brand-accent)]"></span>
-                <span class="w-1.5 h-1.5 rounded-full bg-[var(--brand-accent)]"></span>
-                <span class="w-1.5 h-1.5 rounded-full bg-[var(--brand-accent)]"></span>
-              </span>
-            </summary>
-            <div class="absolute left-0 mt-3 w-52 rounded-2xl menu-accent shadow-xl overflow-hidden">
-              <a class="block px-4 py-3 text-sm font-medium transition" href="#/profile">Profile</a>
-              <a class="block px-4 py-3 text-sm font-medium transition" href="#/notifications">Notifications</a>
-              <a class="block px-4 py-3 text-sm font-medium transition" href="#/my-trips">My Trips</a>
-            </div>
-          </details>
-        </div>
+        ${MenuColumn()}
 
         <div class="flex-1 space-y-6">
-          <header class="flex flex-col gap-4">
+          <header class="flex flex-col gap-2">
             <div>
               <h2 class="text-2xl font-semibold">My Trips</h2>
             </div>
-
-            <div class="flex items-center gap-3">
-              <button
-                data-trip-tab="new"
-                class="flex-1 px-4 py-3 rounded-xl font-semibold btn-accent shadow-sm flex items-center justify-center gap-2"
-              >
-                New
-                <span class="px-2 py-0.5 rounded-full text-xs font-semibold bg-white text-black">8</span>
-              </button>
-              <button
-                data-trip-tab="confirmed"
-                class="flex-1 px-4 py-3 rounded-xl font-semibold bg-white/15 text-white hover:bg-white/20 transition flex items-center justify-center gap-2"
-              >
-                Confirmed
-                <span class="px-2 py-0.5 rounded-full text-xs font-semibold bg-white/20 text-white">5</span>
-              </button>
-            </div>
           </header>
 
-          <div class="flex items-center gap-3">
-            <button
-              data-trip-tab="cancelled"
-              class="flex-1 px-4 py-3 rounded-xl font-semibold bg-white/15 text-white hover:bg-white/20 transition flex items-center justify-center gap-2"
-            >
-              Cancelled
-              <span class="px-2 py-0.5 rounded-full text-xs font-semibold bg-white/20 text-white">2</span>
-            </button>
-            <button
-              data-trip-tab="history"
-              class="flex-1 px-4 py-3 rounded-xl font-semibold bg-white/15 text-white hover:bg-white/20 transition flex items-center justify-center gap-2"
-            >
-              History
-              <span class="px-2 py-0.5 rounded-full text-xs font-semibold bg-white/20 text-white">24</span>
-            </button>
+          <div class="sticky top-0 z-10 bg-[var(--color-primary)] shadow-lg ">
+            <div class="flex flex-col gap-3 px-4 py-3">
+              <div class="flex items-center gap-3">
+                <button
+                  data-trip-tab="new"
+                  class="flex-1 px-4 py-3 rounded-xl font-semibold btn-accent shadow-sm flex items-center justify-center gap-2"
+                >
+                  New
+                  <span class="px-2 py-0.5 rounded-full text-xs font-semibold bg-white text-black">8</span>
+                </button>
+                <button
+                  data-trip-tab="confirmed"
+                  class="flex-1 px-4 py-3 rounded-xl font-semibold bg-white/15 text-white hover:bg-white/20 transition flex items-center justify-center gap-2"
+                >
+                  Confirmed
+                  <span class="px-2 py-0.5 rounded-full text-xs font-semibold bg-white/20 text-white">5</span>
+                </button>
+              </div>
+              <div class="flex items-center gap-3">
+                <button
+                  data-trip-tab="cancelled"
+                  class="flex-1 px-4 py-3 rounded-xl font-semibold bg-white/15 text-white hover:bg-white/20 transition flex items-center justify-center gap-2"
+                >
+                  Cancelled
+                  <span class="px-2 py-0.5 rounded-full text-xs font-semibold bg-white/20 text-white">2</span>
+                </button>
+                <button
+                  data-trip-tab="history"
+                  class="flex-1 px-4 py-3 rounded-xl font-semibold bg-white/15 text-white hover:bg-white/20 transition flex items-center justify-center gap-2"
+                >
+                  History
+                  <span class="px-2 py-0.5 rounded-full text-xs font-semibold bg-white/20 text-white">24</span>
+                </button>
+              </div>
+            </div>
           </div>
 
           <div data-trip-section="new" class="space-y-4">
@@ -160,5 +149,3 @@ export default function MyTrips() {
     </section>
   `;
 }
-
-
