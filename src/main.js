@@ -3,25 +3,49 @@ import "./styles/booking.css";
 
 import { loadRoute } from "./router.js";
 import AppShell from "./components/AppShell.js";
+import {
+  detectInstalled,
+  registerInstallPromptHandler,
+  wireInstallButton
+} from "./logic/app-installation.js";
 
 // =============================
 // ROUTER
 // =============================
 async function router() {
+  const hasExplicitHash = window.location.hash.length > 0;
   const hash = window.location.hash.replace("#", "");
   const path = hash || "/home";
+
+  const isInstalled = await detectInstalled();
+
+  // Only auto-redirect on first visit (no explicit hash)
+  if (!hasExplicitHash) {
+    if (isInstalled) {
+      window.location.hash = "#/home";
+      return;
+    }
+    window.location.hash = "#/install-bukabus";
+    return;
+  }
 
   // wait for route
   const pageContent = await loadRoute(path);
 
   const app = document.getElementById("app");
-  app.innerHTML = AppShell(pageContent);
+  const hideTopBar = path === "/install-bukabus";
+  app.innerHTML = AppShell(pageContent, { hideTopBar });
+
+  if (path === "/install-bukabus") {
+    wireInstallButton({ isInstalled });
+  }
 }
 
 
 // Run on load + navigation
 window.addEventListener("load", router);
 window.addEventListener("hashchange", router);
+registerInstallPromptHandler();
 
 // Close open menus when clicking/tapping outside
 function closeMenusOnOutsideClick(event) {

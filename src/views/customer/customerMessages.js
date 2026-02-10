@@ -1,4 +1,4 @@
-import MenuColumn from "../../components/MenuColumn.js";
+import CustomerMenuColumn from "../../components/CustomerMenuColumn.js";
 
 export default function CustomerMessages() {
   const threads = [
@@ -21,7 +21,7 @@ export default function CustomerMessages() {
   return `
     <section class="max-w-[900px] mx-auto mt-8 p-6 app-card">
       <div class="flex items-start gap-4">
-        ${MenuColumn()}
+        ${CustomerMenuColumn()}
 
         <div class="flex-1 space-y-6">
           <header class="flex flex-col gap-2">

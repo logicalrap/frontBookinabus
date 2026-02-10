@@ -12,6 +12,7 @@ import CustomerProfile from "./views/customer/customerProfile.js";
 import CustomerNotifications from "./views/customer/customerNotifications.js";
 import CustomerMessages from "./views/customer/customerMessages.js";
 import MyBookings from "./views/customer/myBookings.js";
+import InstallApp from "./views/installApp.js";
 import { initBookingForm } from "./logic/bookingForm.js";
 import { initTripsTabs } from "./logic/trips.js";
 
@@ -26,6 +27,7 @@ const routes = {
   "/customer-notifications": CustomerNotifications,
   "/customer-messages": CustomerMessages,
   "/my-bookings": MyBookings,
+  "/install-bukabus": InstallApp,
   "/notifications": Notifications,
   "/messages": Messages,
   "/my-trips": MyTrips

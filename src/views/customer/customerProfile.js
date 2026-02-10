@@ -1,4 +1,4 @@
-import MenuColumn from "../../components/MenuColumn.js";
+import CustomerMenuColumn from "../../components/CustomerMenuColumn.js";
 
 export default function CustomerProfile() {
   const customer = {
@@ -11,7 +11,7 @@ export default function CustomerProfile() {
   return `
     <section class="max-w-[900px] mx-auto mt-8 p-6 app-card">
       <div class="flex items-start gap-4 min-w-0">
-        ${MenuColumn()}
+        ${CustomerMenuColumn()}
 
         <div class="flex-1 space-y-6 min-w-0">
           <header class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">

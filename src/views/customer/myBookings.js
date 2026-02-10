@@ -1,4 +1,4 @@
-import MenuColumn from "../../components/MenuColumn.js";
+import CustomerMenuColumn from "../../components/CustomerMenuColumn.js";
 
 export default function MyBookings() {
   const bookings = [
@@ -69,7 +69,7 @@ export default function MyBookings() {
   return `
     <section class="max-w-[900px] mx-auto mt-8 p-6 app-card">
       <div class="flex items-start gap-4">
-        ${MenuColumn()}
+        ${CustomerMenuColumn()}
 
         <div class="flex-1 space-y-6" data-trip-default="upcoming">
           <header class="flex flex-col gap-2">

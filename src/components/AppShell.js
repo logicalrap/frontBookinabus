@@ -1,9 +1,14 @@
-﻿export default function AppShell(content) {
+export default function AppShell(content, options = {}) {
+  const { hideTopBar = false } = options;
   return `
     <div class="min-h-screen flex justify-center px-4 py-8">
 
       <div class="w-full max-w-md space-y-6">
 
+        ${
+          hideTopBar
+            ? ""
+            : `
         <!-- Top bar -->
         <header class="app-card px-5 py-4 flex items-center justify-between">
           <div class="flex items-center gap-3">
@@ -28,6 +33,8 @@
             </div>
           </details>
         </header>
+        `
+        }
 
         <!-- Injected pages -->
         <main class="app-card p-6 space-y-6">
