@@ -1,5 +1,5 @@
-(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const i of document.querySelectorAll('link[rel="modulepreload"]'))a(i);new MutationObserver(i=>{for(const o of i)if(o.type==="childList")for(const n of o.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&a(n)}).observe(document,{childList:!0,subtree:!0});function s(i){const o={};return i.integrity&&(o.integrity=i.integrity),i.referrerPolicy&&(o.referrerPolicy=i.referrerPolicy),i.crossOrigin==="use-credentials"?o.credentials="include":i.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function a(i){if(i.ep)return;i.ep=!0;const o=s(i);fetch(i.href,o)}})();function T(){const t=(window.location.hash||"").split("?")[1]||"";return new URLSearchParams(t).get("role")||"user"}function E(){const e=T();return`
-    <section class="max-w-[420px] mx-auto mt-16 p-6 app-card">
+(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const o of document.querySelectorAll('link[rel="modulepreload"]'))i(o);new MutationObserver(o=>{for(const a of o)if(a.type==="childList")for(const n of a.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&i(n)}).observe(document,{childList:!0,subtree:!0});function s(o){const a={};return o.integrity&&(a.integrity=o.integrity),o.referrerPolicy&&(a.referrerPolicy=o.referrerPolicy),o.crossOrigin==="use-credentials"?a.credentials="include":o.crossOrigin==="anonymous"?a.credentials="omit":a.credentials="same-origin",a}function i(o){if(o.ep)return;o.ep=!0;const a=s(o);fetch(o.href,a)}})();function $(){const t=(window.location.hash||"").split("?")[1]||"";return new URLSearchParams(t).get("role")||"user"}function I(){const e=$();return`
+    <section class="app-page">
 
       <!-- Header -->
       <header class="text-center mb-8">
@@ -57,8 +57,8 @@
       </div>
 
     </section>
-  `}function g(){return`
-    <section class="max-w-[900px] mx-auto mt-8 p-6 app-card">
+  `}function v(){return`
+    <section class="app-page">
 
 
       <form id="bookingForm" class="space-y-6">
@@ -92,7 +92,7 @@
           </div>
 
           <!-- Pickup & Drop-off -->
-          <div class="flex flex-col md:flex-row gap-5 mb-5">
+          <div class="flex flex-col sm:flex-row gap-5 mb-5">
             <div class="flex-1">
               <label class="block mb-2 font-medium text-gray-200">
                 Pickup Location
@@ -119,7 +119,7 @@
           </div>
 
           <!-- Date & Time -->
-          <div class="flex flex-col md:flex-row gap-5 mb-6">
+          <div class="flex flex-col sm:flex-row gap-5 mb-6">
             <div class="flex-1">
               <label class="block mb-2 font-medium text-gray-200">
                 Trip Date
@@ -162,7 +162,7 @@
             Contact Information
           </h3>
 
-          <div class="flex flex-col md:flex-row gap-5 mb-5">
+          <div class="flex flex-col sm:flex-row gap-5 mb-5">
             <div class="flex-1">
               <label class="block mb-2 font-medium text-gray-200">
                 Full Name
@@ -220,8 +220,8 @@
 
       </form>
     </section>
-  `}function b(e=[]){const t=e.slice(0,8),s=e.slice(3);return`
-    <section class="max-w-[900px] mx-auto mt-8 p-6 app-card flex flex-col space-y-6 pb-20 relative">
+  `}function g(e=[]){const t=e.slice(0,8),s=e.slice(3);return`
+    <section class="app-page flex flex-col space-y-6 pb-20 relative">
 
       <!-- Header -->
       <header class="text-center mb-4">
@@ -231,21 +231,21 @@
 
       <!-- Recommended Drivers -->
       <div class="space-y-4">
-        ${t.map(a=>`
+        ${t.map(i=>`
           <div class="bg-white text-black rounded-lg shadow-md p-4 hover:shadow-lg transition duration-300 flex items-center justify-between gap-4">
 
             <!-- Driver Info -->
             <div class="flex-1">
-              <h3 class="text-lg font-medium">${a.name}</h3>
-              <p class="text-sm">${a.email}</p>
+              <h3 class="text-lg font-medium">${i.name}</h3>
+              <p class="text-sm">${i.email}</p>
               <span class="mt-2 inline-block px-2 py-1 bg-blue-100 text-blue-800 text-xs font-semibold rounded-full">Recommended</span>
             </div>
 
             <!-- Driver Image -->
             <div class="w-16 h-16 flex-shrink-0">
               <img 
-                src="${a.photo||"https://via.placeholder.com/64"}" 
-                alt="${a.name}" 
+                src="${i.photo||"https://via.placeholder.com/64"}" 
+                alt="${i.name}" 
                 class="w-16 h-16 rounded-full object-cover border border-gray-200"
               />
             </div>
@@ -254,46 +254,27 @@
         `).join("")}
       </div>
 
-      <!-- Other drivers note: fixed at bottom but aligned with app-card -->
+      <!-- Other drivers note: full-width mobile app banner -->
       ${s.length>0?`
-        <div class="fixed bottom-0 left-1/2 transform -translate-x-1/2 max-w-[900px] w-[90%] bg-[var(--color-primary)] text-white text-center p-4 font-medium rounded-lg shadow-md">
+        <div class="fixed bottom-0 left-0 right-0 bg-[var(--color-primary)] text-white text-center p-4 font-medium">
           Other drivers will contact you shortly
         </div>
       `:""}
       
     </section>
-  `}const f=[{id:"REQ-2041",customer:"Amina Yusuf",eventType:"Wedding",date:"Feb 16, 2026",time:"8:30 AM",pickup:"Ikeja, Lagos",dropoff:"Lekki Phase 1",passengers:42,phone:"+234 803 552 9102",status:"Awaiting Quote"},{id:"REQ-2042",customer:"David Okoye",eventType:"Corporate Event",date:"Feb 18, 2026",time:"6:00 AM",pickup:"Maryland, Lagos",dropoff:"Victoria Island",passengers:30,phone:"+234 812 771 4439",status:"Pending Driver"},{id:"REQ-2043",customer:"Grace Bello",eventType:"Church Program",date:"Feb 20, 2026",time:"7:15 AM",pickup:"Surulere, Lagos",dropoff:"Ikeja, Lagos",passengers:55,phone:"+234 810 663 1180",status:"Awaiting Quote"},{id:"REQ-2044",customer:"Samuel Ade",eventType:"School Trip",date:"Feb 22, 2026",time:"9:00 AM",pickup:"Yaba, Lagos",dropoff:"Badagry",passengers:48,phone:"+234 708 420 9921",status:"Urgent Review"}];function P(){try{return localStorage.getItem("appRole")||"customer"}catch{return"customer"}}function c(){const t=P()==="driver";return`
-    <div class="sticky top-4 z-[999] self-start ">
-      <details class="relative z-[60]">
-        <summary class="list-none cursor-pointer inline-flex items-center justify-center w-11 h-11 rounded-xl bg-white/15 hover:bg-white/25 transition ring-1 ring-white/20 shadow-lg">
-          <span class="grid grid-cols-2 gap-1">
-            <span class="w-1.5 h-1.5 rounded-full bg-[var(--brand-accent)]"></span>
-            <span class="w-1.5 h-1.5 rounded-full bg-[var(--brand-accent)]"></span>
-            <span class="w-1.5 h-1.5 rounded-full bg-[var(--brand-accent)]"></span>
-            <span class="w-1.5 h-1.5 rounded-full bg-[var(--brand-accent)]"></span>
-          </span>
-        </summary>
-        <div class="absolute left-0 mt-3 w-52 rounded-2xl menu-accent shadow-xl overflow-hidden z-[60]">
-          <a class="block px-4 py-3 text-sm font-medium transition" href="${t?"#/profile":"#/customer-profile"}">Profile</a>
-          <a class="block px-4 py-3 text-sm font-medium transition" href="${t?"#/notifications":"#/customer-notifications"}">Notifications</a>
-          <a class="block px-4 py-3 text-sm font-medium transition" href="${t?"#/my-trips":"#/my-bookings"}">My ${t?"Trips":"Bookings"}</a>
-        </div>
-      </details>
-    </div>
-  `}function C(){return`
-    <section class="max-w-[900px] mx-auto mt-8 p-6 app-card space-y-6">
+  `}const m=[{id:"REQ-2041",customer:"Amina Yusuf",eventType:"Wedding",date:"Feb 16, 2026",time:"8:30 AM",pickup:"Ikeja, Lagos",dropoff:"Lekki Phase 1",passengers:42,phone:"+234 803 552 9102",status:"Awaiting Quote"},{id:"REQ-2042",customer:"David Okoye",eventType:"Corporate Event",date:"Feb 18, 2026",time:"6:00 AM",pickup:"Maryland, Lagos",dropoff:"Victoria Island",passengers:30,phone:"+234 812 771 4439",status:"Pending Driver"},{id:"REQ-2043",customer:"Grace Bello",eventType:"Church Program",date:"Feb 20, 2026",time:"7:15 AM",pickup:"Surulere, Lagos",dropoff:"Ikeja, Lagos",passengers:55,phone:"+234 810 663 1180",status:"Awaiting Quote"},{id:"REQ-2044",customer:"Samuel Ade",eventType:"School Trip",date:"Feb 22, 2026",time:"9:00 AM",pickup:"Yaba, Lagos",dropoff:"Badagry",passengers:48,phone:"+234 708 420 9921",status:"Urgent Review"}];function E(){return`
+    <section class="app-page space-y-6">
 
-      <div class="flex items-start gap-4">
-        ${c()}
+      <div>
 
-        <div class="flex-1 space-y-4">
+        <div class="space-y-4">
           <header>
             <h2 class="text-2xl font-semibold text-[var(--color-secondary-heading)]">Driver Dashboard</h2>
             <p class="mt-2 text-gray-200">Incoming trip requests waiting for action</p>
           </header>
 
           <div class="space-y-4">
-            ${f.map(e=>`
+            ${m.map(e=>`
           <a class="block bg-white text-black rounded-lg shadow-md p-5 flex flex-col gap-4 transition hover:shadow-lg border border-transparent hover:border-[var(--color-primary-action)]"
              href="#/booking/${e.id}">
             <div class="flex items-center justify-between">
@@ -326,12 +307,11 @@
         </div>
       </div>
     </section>
-  `}function L(){const e={name:"Samuel Adeyemi",role:"Lead Event Driver",license:"LIC-9021-NA",phone:"+234 803 555 2110",email:"samuel.adeyemi@bookinabus.com",location:"Lagos, Nigeria"},t={number:"BUS-2241",type:"Luxury Coach",capacity:"56 seats",plate:"LND 542 AZ"};return`
-    <section class="max-w-[900px] mx-auto mt-8 p-6 app-card">
-      <div class="flex items-start gap-4 min-w-0">
-        ${c()}
+  `}function T(){const e={name:"Samuel Adeyemi",role:"Lead Event Driver",license:"LIC-9021-NA",phone:"+234 803 555 2110",email:"samuel.adeyemi@bookinabus.com",location:"Lagos, Nigeria"},t={number:"BUS-2241",type:"Luxury Coach",capacity:"56 seats",plate:"LND 542 AZ"};return`
+    <section class="app-page">
+      <div class="min-w-0">
 
-        <div class="flex-1 space-y-6 min-w-0">
+        <div class="space-y-6 min-w-0">
           <header class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div>
               <h2 class="text-2xl font-semibold text-[var(--color-secondary-heading)]">Driver Profile</h2>
@@ -385,8 +365,8 @@
         </div>
       </div>
     </section>
-  `}function N(e){const t=f.find(s=>s.id===e);return t?`
-    <section class="max-w-[900px] mx-auto mt-8 p-6 app-card space-y-6">
+  `}function P(e){const t=m.find(s=>s.id===e);return t?`
+    <section class="app-page space-y-6">
       <div class="bg-white text-black rounded-2xl shadow-lg p-6">
         <div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
           <div>
@@ -428,7 +408,7 @@
       </div>
     </section>
   `:`
-      <section class="max-w-[900px] mx-auto mt-8 p-6 app-card space-y-6">
+      <section class="app-page space-y-6">
         <div class="bg-white text-black rounded-2xl shadow-lg p-6">
           <h2 class="text-2xl font-semibold">Booking not found</h2>
           <p class="mt-2 text-sm text-gray-600">We could not find a booking for ${e}.</p>
@@ -437,8 +417,8 @@
           </a>
         </div>
       </section>
-    `}function j(e){const t=f.find(a=>a.id===e),s="+234 803 555 2110";return t?`
-    <section class="max-w-[900px] mx-auto mt-8 p-6 app-card space-y-6">
+    `}function C(e){const t=m.find(i=>i.id===e),s="+234 803 555 2110";return t?`
+    <section class="app-page space-y-6">
       <div class="bg-white text-black rounded-2xl shadow-lg p-6 space-y-6">
         <header class="space-y-2">
           <p class="text-xs uppercase tracking-widest text-[var(--color-primary-action)] font-semibold">Send Quote</p>
@@ -705,7 +685,7 @@
       </div>
     </section>
   `:`
-      <section class="max-w-[900px] mx-auto mt-8 p-6 app-card space-y-6">
+      <section class="app-page space-y-6">
         <div class="bg-white text-black rounded-2xl shadow-lg p-6">
           <h2 class="text-2xl font-semibold">Quote request not found</h2>
           <p class="mt-2 text-sm text-gray-600">We could not find a booking for ${e}.</p>
@@ -714,12 +694,11 @@
           </a>
         </div>
       </section>
-    `}function A(){const e=[{id:"NTF-901",title:"New booking request",message:"Amina Yusuf requested a Wedding trip for Feb 16, 2026 at 8:30 AM.",time:"2 mins ago",type:"new"},{id:"NTF-902",title:"Quote viewed",message:"Your quote for REQ-2042 was opened by the customer.",time:"35 mins ago",type:"info"},{id:"NTF-903",title:"Quote accepted",message:"David Okoye accepted your quote for REQ-2042.",time:"1 hour ago",type:"success"},{id:"NTF-904",title:"Trip reminder",message:"Upcoming trip: Church Program on Feb 20, 2026 at 7:15 AM.",time:"Yesterday",type:"reminder"}],t={new:"bg-[var(--color-primary-action)]/10 text-[var(--color-primary-action)]",info:"bg-blue-100 text-blue-700",success:"bg-emerald-100 text-emerald-700",reminder:"bg-amber-100 text-amber-700"};return`
-    <section class="max-w-[900px] mx-auto mt-8 p-6 app-card">
-      <div class="flex items-start gap-4">
-        ${c()}
+    `}function L(){const e=[{id:"NTF-901",title:"New booking request",message:"Amina Yusuf requested a Wedding trip for Feb 16, 2026 at 8:30 AM.",time:"2 mins ago",type:"new"},{id:"NTF-902",title:"Quote viewed",message:"Your quote for REQ-2042 was opened by the customer.",time:"35 mins ago",type:"info"},{id:"NTF-903",title:"Quote accepted",message:"David Okoye accepted your quote for REQ-2042.",time:"1 hour ago",type:"success"},{id:"NTF-904",title:"Trip reminder",message:"Upcoming trip: Church Program on Feb 20, 2026 at 7:15 AM.",time:"Yesterday",type:"reminder"}],t={new:"bg-[var(--color-primary-action)]/10 text-[var(--color-primary-action)]",info:"bg-blue-100 text-blue-700",success:"bg-emerald-100 text-emerald-700",reminder:"bg-amber-100 text-amber-700"};return`
+    <section class="app-page">
+      <div>
 
-        <div class="flex-1 space-y-6">
+        <div class="space-y-6">
           <header class="flex flex-col gap-2">
             <div>
               <h2 class="text-2xl font-semibold text-[var(--color-secondary-heading)]">Notifications</h2>
@@ -758,12 +737,11 @@
         </div>
       </div>
     </section>
-  `}function S(){const e=[{id:"MSG-301",name:"Dispatch Team",preview:"Your driver assignment for REQ-2041 is confirmed.",time:"3 mins ago",unread:!0},{id:"MSG-302",name:"Amina Yusuf",preview:"Please confirm pickup at Ikeja by 8:15 AM.",time:"25 mins ago",unread:!0},{id:"MSG-303",name:"David Okoye",preview:"Thanks for the quote. Is there a discount for return trips?",time:"1 hr ago",unread:!1},{id:"MSG-304",name:"Grace Bello",preview:"We may adjust the pickup time by 15 minutes.",time:"Yesterday",unread:!1}];return`
-    <section class="max-w-[900px] mx-auto mt-8 p-6 app-card">
-      <div class="flex items-start gap-4">
-        ${c()}
+  `}function N(){return`
+    <section class="app-page">
+      <div>
 
-        <div class="flex-1 space-y-6">
+        <div class="space-y-6">
           <header class="flex flex-col gap-2">
             <div>
               <h2 class="text-2xl font-semibold text-[var(--color-secondary-heading)]">Messages</h2>
@@ -782,7 +760,7 @@
           </div>
 
           <div class="space-y-4 mt-2">
-            ${e.map(t=>`
+            ${[{id:"MSG-301",name:"Dispatch Team",preview:"Your driver assignment for REQ-2041 is confirmed.",time:"3 mins ago",unread:!0},{id:"MSG-302",name:"Amina Yusuf",preview:"Please confirm pickup at Ikeja by 8:15 AM.",time:"25 mins ago",unread:!0},{id:"MSG-303",name:"David Okoye",preview:"Thanks for the quote. Is there a discount for return trips?",time:"1 hr ago",unread:!1},{id:"MSG-304",name:"Grace Bello",preview:"We may adjust the pickup time by 15 minutes.",time:"Yesterday",unread:!1}].map(t=>`
             <div class="bg-white text-black rounded-2xl shadow-md p-5 flex items-start gap-4">
               <div class="w-11 h-11 rounded-full bg-[var(--color-primary-action)]/10 text-[var(--color-primary-action)] flex items-center justify-center font-semibold">
                 ${t.name.split(" ").slice(0,2).map(s=>s[0]).join("")}
@@ -801,21 +779,21 @@
         </div>
       </div>
     </section>
-  `}function y(){const e=[{id:"TRP-501",event:"Wedding",customer:"Amina Yusuf",date:"Feb 16, 2026",time:"8:30 AM",pickup:"Ikeja, Lagos",dropoff:"Lekki Phase 1",status:"Upcoming"},{id:"TRP-502",event:"Corporate Event",customer:"David Okoye",date:"Feb 18, 2026",time:"6:00 AM",pickup:"Maryland, Lagos",dropoff:"Victoria Island",status:"Confirmed"},{id:"TRP-503",event:"Church Program",customer:"Grace Bello",date:"Feb 20, 2026",time:"7:15 AM",pickup:"Surulere, Lagos",dropoff:"Ikeja, Lagos",status:"Upcoming"},{id:"TRP-504",event:"School Trip",customer:"Samuel Ade",date:"Jan 29, 2026",time:"9:00 AM",pickup:"Yaba, Lagos",dropoff:"Badagry",status:"Completed"}],t={Upcoming:"bg-[var(--color-primary-action)]/10 text-[var(--color-primary-action)]",Confirmed:"bg-emerald-100 text-emerald-700",Completed:"bg-gray-100 text-gray-700"},s=a=>a.length?a.map(i=>`
+  `}function b(){const e=[{id:"TRP-501",event:"Wedding",customer:"Amina Yusuf",date:"Feb 16, 2026",time:"8:30 AM",pickup:"Ikeja, Lagos",dropoff:"Lekki Phase 1",status:"Upcoming"},{id:"TRP-502",event:"Corporate Event",customer:"David Okoye",date:"Feb 18, 2026",time:"6:00 AM",pickup:"Maryland, Lagos",dropoff:"Victoria Island",status:"Confirmed"},{id:"TRP-503",event:"Church Program",customer:"Grace Bello",date:"Feb 20, 2026",time:"7:15 AM",pickup:"Surulere, Lagos",dropoff:"Ikeja, Lagos",status:"Upcoming"},{id:"TRP-504",event:"School Trip",customer:"Samuel Ade",date:"Jan 29, 2026",time:"9:00 AM",pickup:"Yaba, Lagos",dropoff:"Badagry",status:"Completed"}],t={Upcoming:"bg-[var(--color-primary-action)]/10 text-[var(--color-primary-action)]",Confirmed:"bg-emerald-100 text-emerald-700",Completed:"bg-gray-100 text-gray-700"},s=i=>i.length?i.map(o=>`
           <div class="bg-white text-black rounded-2xl shadow-md p-5 space-y-3">
             <div class="flex items-center justify-between">
-              <div class="text-sm font-semibold text-gray-500">${i.id}</div>
-              <span class="text-xs font-semibold px-2.5 py-1 rounded-full ${t[i.status]||"bg-gray-100 text-gray-700"}">
-                ${i.status}
+              <div class="text-sm font-semibold text-gray-500">${o.id}</div>
+              <span class="text-xs font-semibold px-2.5 py-1 rounded-full ${t[o.status]||"bg-gray-100 text-gray-700"}">
+                ${o.status}
               </span>
             </div>
-            <div class="text-lg font-semibold">${i.event}</div>
+            <div class="text-lg font-semibold">${o.event}</div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
-              <div><span class="font-semibold">Customer:</span> ${i.customer}</div>
-              <div><span class="font-semibold">Date:</span> ${i.date}</div>
-              <div><span class="font-semibold">Time:</span> ${i.time}</div>
-              <div><span class="font-semibold">Pickup:</span> ${i.pickup}</div>
-              <div><span class="font-semibold">Drop-off:</span> ${i.dropoff}</div>
+              <div><span class="font-semibold">Customer:</span> ${o.customer}</div>
+              <div><span class="font-semibold">Date:</span> ${o.date}</div>
+              <div><span class="font-semibold">Time:</span> ${o.time}</div>
+              <div><span class="font-semibold">Pickup:</span> ${o.pickup}</div>
+              <div><span class="font-semibold">Drop-off:</span> ${o.dropoff}</div>
             </div>
           </div>
         `).join(""):`
@@ -823,11 +801,10 @@
           No trips available yet.
         </div>
       `;return`
-    <section class="max-w-[900px] mx-auto mt-8 p-6 app-card">
-      <div class="flex items-start gap-4">
-        ${c()}
+    <section class="app-page">
+      <div>
 
-        <div class="flex-1 space-y-6">
+        <div class="space-y-6">
           <header class="flex flex-col gap-2">
             <div>
               <h2 class="text-2xl font-semibold text-[var(--color-secondary-heading)]">My Trips</h2>
@@ -872,48 +849,28 @@
           </div>
 
           <div data-trip-section="new" class="space-y-4">
-            ${s(e.filter(a=>a.status==="Upcoming"))}
+            ${s(e.filter(i=>i.status==="Upcoming"))}
           </div>
 
           <div data-trip-section="confirmed" class="space-y-4 hidden">
-            ${s(e.filter(a=>a.status==="Confirmed"))}
+            ${s(e.filter(i=>i.status==="Confirmed"))}
           </div>
 
           <div data-trip-section="cancelled" class="space-y-4 hidden">
-            ${s(e.filter(a=>a.status==="Cancelled"))}
+            ${s(e.filter(i=>i.status==="Cancelled"))}
           </div>
 
           <div data-trip-section="history" class="space-y-4 hidden">
-            ${s(e.filter(a=>a.status==="Completed"))}
+            ${s(e.filter(i=>i.status==="Completed"))}
           </div>
         </div>
       </div>
     </section>
-  `}function p(){return`
-    <div class="sticky top-4 z-[999] self-start ">
-      <details class="relative z-[60]">
-        <summary class="list-none cursor-pointer inline-flex items-center justify-center w-11 h-11 rounded-xl bg-white/15 hover:bg-white/25 transition ring-1 ring-white/20 shadow-lg">
-          <span class="grid grid-cols-2 gap-1">
-            <span class="w-1.5 h-1.5 rounded-full bg-[var(--brand-accent)]"></span>
-            <span class="w-1.5 h-1.5 rounded-full bg-[var(--brand-accent)]"></span>
-            <span class="w-1.5 h-1.5 rounded-full bg-[var(--brand-accent)]"></span>
-            <span class="w-1.5 h-1.5 rounded-full bg-[var(--brand-accent)]"></span>
-          </span>
-        </summary>
-        <div class="absolute left-0 mt-3 w-52 rounded-2xl menu-accent shadow-xl overflow-hidden z-[60]">
-          <a class="block mx-2 my-2 px-4 py-3 text-sm font-bold rounded-xl text-center shadow-md bg-[#0b5cff] " href="#/home">Find a bus</a>
-          <a class="block px-4 py-3 text-sm font-medium transition" href="#/customer-profile">Profile</a>
-          <a class="block px-4 py-3 text-sm font-medium transition" href="#/customer-notifications">Notifications</a>
-          <a class="block px-4 py-3 text-sm font-medium transition" href="#/my-bookings">My Bookings</a>
-        </div>
-      </details>
-    </div>
-  `}function D(){const e={name:"Amina Yusuf",phone:"+260 97 123 4567",email:"amina.yusuf@example.com",nrc:"123456/78/1"};return`
-    <section class="max-w-[900px] mx-auto mt-8 p-6 app-card">
-      <div class="flex items-start gap-4 min-w-0">
-        ${p()}
+  `}function S(){const e={name:"Amina Yusuf",phone:"+260 97 123 4567",email:"amina.yusuf@example.com",nrc:"123456/78/1"};return`
+    <section class="app-page">
+      <div class="min-w-0">
 
-        <div class="flex-1 space-y-6 min-w-0">
+        <div class="space-y-6 min-w-0">
           <header class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div>
               <h2 class="text-2xl font-semibold text-[var(--color-secondary-heading)]">Customer Profile</h2>
@@ -963,12 +920,11 @@
         </div>
       </div>
     </section>
-  `}function q(){const e=[{id:"CNTF-201",title:"Booking confirmed",message:"Your trip for Feb 16, 2026 has been confirmed.",time:"5 mins ago",type:"success"},{id:"CNTF-202",title:"Quote received",message:"A driver sent a quote for your wedding booking.",time:"25 mins ago",type:"new"},{id:"CNTF-203",title:"Payment reminder",message:"Please complete payment to secure your booking.",time:"1 hour ago",type:"reminder"}],t={new:"bg-[var(--color-primary-action)]/10 text-[var(--color-primary-action)]",success:"bg-emerald-100 text-emerald-700",reminder:"bg-amber-100 text-amber-700"};return`
-    <section class="max-w-[900px] mx-auto mt-8 p-6 app-card">
-      <div class="flex items-start gap-4">
-        ${p()}
+  `}function j(){const e=[{id:"CNTF-201",title:"Booking confirmed",message:"Your trip for Feb 16, 2026 has been confirmed.",time:"5 mins ago",type:"success"},{id:"CNTF-202",title:"Quote received",message:"A driver sent a quote for your wedding booking.",time:"25 mins ago",type:"new"},{id:"CNTF-203",title:"Payment reminder",message:"Please complete payment to secure your booking.",time:"1 hour ago",type:"reminder"}],t={new:"bg-[var(--color-primary-action)]/10 text-[var(--color-primary-action)]",success:"bg-emerald-100 text-emerald-700",reminder:"bg-amber-100 text-amber-700"};return`
+    <section class="app-page">
+      <div>
 
-        <div class="flex-1 space-y-6">
+        <div class="space-y-6">
           <header class="flex flex-col gap-2">
             <div>
               <h2 class="text-2xl font-semibold text-[var(--color-secondary-heading)]">Notifications</h2>
@@ -1003,12 +959,11 @@
         </div>
       </div>
     </section>
-  `}function M(){const e=[{id:"CMSG-101",name:"Dispatch Team",preview:"Your driver is on the way to the pickup location.",time:"10 mins ago",unread:!0},{id:"CMSG-102",name:"Assigned Driver",preview:"Please confirm the pickup time.",time:"30 mins ago",unread:!1}];return`
-    <section class="max-w-[900px] mx-auto mt-8 p-6 app-card">
-      <div class="flex items-start gap-4">
-        ${p()}
+  `}function A(){return`
+    <section class="app-page">
+      <div>
 
-        <div class="flex-1 space-y-6">
+        <div class="space-y-6">
           <header class="flex flex-col gap-2">
             <div>
               <h2 class="text-2xl font-semibold text-[var(--color-secondary-heading)]">Messages</h2>
@@ -1028,7 +983,7 @@
           </div>
 
           <div class="space-y-4 mt-2">
-            ${e.map(t=>`
+            ${[{id:"CMSG-101",name:"Dispatch Team",preview:"Your driver is on the way to the pickup location.",time:"10 mins ago",unread:!0},{id:"CMSG-102",name:"Assigned Driver",preview:"Please confirm the pickup time.",time:"30 mins ago",unread:!1}].map(t=>`
             <div class="bg-white text-black rounded-2xl shadow-md p-5 flex items-start gap-4">
               <div class="w-11 h-11 rounded-full bg-[var(--color-primary-action)]/10 text-[var(--color-primary-action)] flex items-center justify-center font-semibold">
                 ${t.name.split(" ").slice(0,2).map(s=>s[0]).join("")}
@@ -1047,20 +1002,20 @@
         </div>
       </div>
     </section>
-  `}function h(){const e=[{id:"BKG-801",event:"Wedding",date:"Feb 16, 2026",time:"8:30 AM",pickup:"Ikeja, Lagos",dropoff:"Lekki Phase 1",status:"Upcoming"},{id:"BKG-802",event:"Corporate Event",date:"Feb 18, 2026",time:"6:00 AM",pickup:"Maryland, Lagos",dropoff:"Victoria Island",status:"Completed"},{id:"BKG-803",event:"Church Program",date:"Feb 20, 2026",time:"7:15 AM",pickup:"Surulere, Lagos",dropoff:"Ikeja, Lagos",status:"Cancelled"}],t={Upcoming:"bg-[var(--color-primary-action)]/10 text-[var(--color-primary-action)]",Completed:"bg-emerald-100 text-emerald-700",Cancelled:"bg-rose-100 text-rose-700"},s=a=>a.length?a.map(i=>`
+  `}function x(){const e=[{id:"BKG-801",event:"Wedding",date:"Feb 16, 2026",time:"8:30 AM",pickup:"Ikeja, Lagos",dropoff:"Lekki Phase 1",status:"Upcoming"},{id:"BKG-802",event:"Corporate Event",date:"Feb 18, 2026",time:"6:00 AM",pickup:"Maryland, Lagos",dropoff:"Victoria Island",status:"Completed"},{id:"BKG-803",event:"Church Program",date:"Feb 20, 2026",time:"7:15 AM",pickup:"Surulere, Lagos",dropoff:"Ikeja, Lagos",status:"Cancelled"}],t={Upcoming:"bg-[var(--color-primary-action)]/10 text-[var(--color-primary-action)]",Completed:"bg-emerald-100 text-emerald-700",Cancelled:"bg-rose-100 text-rose-700"},s=i=>i.length?i.map(o=>`
           <div class="bg-white text-black rounded-2xl shadow-md p-5 space-y-3">
             <div class="flex items-center justify-between">
-              <div class="text-sm font-semibold text-gray-500">${i.id}</div>
-              <span class="text-xs font-semibold px-2.5 py-1 rounded-full ${t[i.status]||"bg-gray-100 text-gray-700"}">
-                ${i.status}
+              <div class="text-sm font-semibold text-gray-500">${o.id}</div>
+              <span class="text-xs font-semibold px-2.5 py-1 rounded-full ${t[o.status]||"bg-gray-100 text-gray-700"}">
+                ${o.status}
               </span>
             </div>
-            <div class="text-lg font-semibold">${i.event}</div>
+            <div class="text-lg font-semibold">${o.event}</div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
-              <div><span class="font-semibold">Date:</span> ${i.date}</div>
-              <div><span class="font-semibold">Time:</span> ${i.time}</div>
-              <div><span class="font-semibold">Pickup:</span> ${i.pickup}</div>
-              <div><span class="font-semibold">Drop-off:</span> ${i.dropoff}</div>
+              <div><span class="font-semibold">Date:</span> ${o.date}</div>
+              <div><span class="font-semibold">Time:</span> ${o.time}</div>
+              <div><span class="font-semibold">Pickup:</span> ${o.pickup}</div>
+              <div><span class="font-semibold">Drop-off:</span> ${o.dropoff}</div>
             </div>
           </div>
         `).join(""):`
@@ -1068,11 +1023,10 @@
           No bookings available yet.
         </div>
       `;return`
-    <section class="max-w-[900px] mx-auto mt-8 p-6 app-card">
-      <div class="flex items-start gap-4">
-        ${p()}
+    <section class="app-page">
+      <div>
 
-        <div class="flex-1 space-y-6" data-trip-default="upcoming">
+        <div class="space-y-6" data-trip-default="upcoming">
           <header class="flex flex-col gap-2">
             <div>
               <h2 class="text-2xl font-semibold text-[var(--color-secondary-heading)]">My Bookings</h2>
@@ -1117,15 +1071,15 @@
           </div>
 
           <div data-trip-section="upcoming" class="space-y-4">
-            ${s(e.filter(a=>a.status==="Upcoming"))}
+            ${s(e.filter(i=>i.status==="Upcoming"))}
           </div>
 
           <div data-trip-section="completed" class="space-y-4 hidden">
-            ${s(e.filter(a=>a.status==="Completed"))}
+            ${s(e.filter(i=>i.status==="Completed"))}
           </div>
 
           <div data-trip-section="cancelled" class="space-y-4 hidden">
-            ${s(e.filter(a=>a.status==="Cancelled"))}
+            ${s(e.filter(i=>i.status==="Cancelled"))}
           </div>
 
           <div data-trip-section="history" class="space-y-4 hidden">
@@ -1134,8 +1088,8 @@
         </div>
       </div>
     </section>
-  `}function F(){return`
-    <section class="max-w-[900px] mx-auto mt-8 p-6 app-card">
+  `}function D(){return`
+    <section class="app-page">
       <header class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
         <div class="flex items-center gap-4">
           <div class="h-14 w-14 rounded-2xl bg-[var(--brand-accent)] shadow-lg"></div>
@@ -1150,9 +1104,14 @@
       </header>
 
       <div class="mt-8 flex flex-col md:flex-row gap-4">
-        <button id="installAppBtn" disabled class="flex-1 px-6 py-4 rounded-xl text-lg font-semibold btn-accent shadow-lg opacity-60 cursor-not-allowed">
-          Install App
-        </button>
+        <div class="flex-1 flex flex-col gap-3">
+          <button id="installAppBtn" disabled class="w-full px-6 py-4 rounded-xl text-lg font-semibold btn-accent shadow-lg opacity-60 cursor-not-allowed">
+            Install App
+          </button>
+          <button id="continueBrowserBtn" type="button" class="w-full px-6 py-3 rounded-xl text-sm font-semibold bg-white/10 hover:bg-white/20 transition text-white border border-white/20">
+            Continue in Browser (Testing)
+          </button>
+        </div>
         <div class="flex-1 rounded-xl border border-white/10 bg-white/5 p-4 text-sm text-white/80">
           Works like a native app. No app store download required.
         </div>
@@ -1231,16 +1190,39 @@
         <a class="hover:text-white" href="#/terms">Terms</a>
       </footer>
     </section>
-  `}const R="http://localhost:8080";async function O(e){try{const t=await fetch(`${R}/api/bookings`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(e)});if(!t.ok){const s=await t.json();throw new Error(s.message||"Failed to submit booking")}return await t.json()}catch(t){throw console.error("Booking API error:",t),t}}function W(){const e=document.getElementById("bookingForm");if(!e)return;const t=e.querySelectorAll(".step");let s=1;const a=u=>{t.forEach(l=>{l.classList.add("hidden"),l.classList.remove("block")});const d=e.querySelector(`[data-step="${u}"]`);d.classList.remove("hidden"),d.classList.add("block")};a(s);const i=document.getElementById("pickup"),o=document.getElementById("dropoff"),n=e.querySelector("select"),r=document.getElementById("date"),m=document.getElementById("time"),$=document.getElementById("name"),B=document.getElementById("phone"),I=document.getElementById("email");document.getElementById("nextBtn").onclick=()=>{if(!i.value||!o.value){alert("Please fill pickup and drop-off locations");return}s=2,a(s)},document.getElementById("backBtn").onclick=()=>{s=1,a(s)},e.onsubmit=async u=>{u.preventDefault();const d={event_type:n.value,pickup_location:i.value,dropoff_location:o.value,trip_date:r.value,pickup_time:m.value,full_name:$.value,phone:B.value,email:I.value};console.log("Payload sent to API:",d);try{const l=await O(d);console.log("Booking successful:",l),alert("Booking submitted successfully!"),location.hash="#/drivers"}catch(l){alert("Failed to submit booking: "+l.message)}}}function v(){const e=Array.from(document.querySelectorAll("[data-trip-tab]")),t=Array.from(document.querySelectorAll("[data-trip-section]"));if(!e.length||!t.length)return;const s="flex-1 px-4 py-3 rounded-xl font-semibold btn-accent shadow-sm flex items-center justify-center gap-2",a="flex-1 px-4 py-3 rounded-xl font-semibold bg-white/15 text-white hover:bg-white/20 transition flex items-center justify-center gap-2";function i(n){e.forEach(r=>{const m=r.dataset.tripTab===n;r.className=m?s:a}),t.forEach(r=>{r.classList.toggle("hidden",r.dataset.tripSection!==n)})}e.forEach(n=>{n.addEventListener("click",()=>i(n.dataset.tripTab))});const o=document.querySelector("[data-trip-default]")?.dataset.tripDefault;i(o||e[0].dataset.tripTab)}const x={"/login":E,"/home":g,"/drivers":b,"/driver-dashboard":C,"/profile":L,"/customer-profile":D,"/customer-notifications":q,"/customer-messages":M,"/my-bookings":h,"/install-bukabus":F,"/notifications":A,"/messages":S,"/my-trips":y};async function G(e){(!e||e==="/")&&(e="/home");const t=["/driver-dashboard","/profile","/notifications","/messages","/my-trips","/drivers"],s=["/home","/customer-profile","/customer-notifications","/customer-messages","/my-bookings"],a=t.some(o=>e===o)||e.startsWith("/booking/")||e.startsWith("/send-quote/"),i=s.some(o=>e===o);try{a?localStorage.setItem("appRole","driver"):i&&localStorage.setItem("appRole","customer")}catch{}if(e.startsWith("/booking/")){const o=e.split("/")[2]||"";return N(o)}if(e.startsWith("/send-quote/")){const o=e.split("/")[2]||"";return j(o)}if(!x[e])return"<h2 class='text-center'>404 – Page not found</h2>";if(e==="/drivers")try{const n=await(await fetch("https://jsonplaceholder.typicode.com/users")).json();return b(n)}catch{return"<p>Failed to load drivers.</p>"}if(e==="/home"){const o=g();return setTimeout(()=>{W()},0),o}if(e==="/my-trips"){const o=y();return setTimeout(()=>{v()},0),o}if(e==="/my-bookings"){const o=h();return setTimeout(()=>{v()},0),o}return x[e]()}function Q(e,t={}){const{hideTopBar:s=!1}=t;return`
-    <div class="min-h-screen flex justify-center px-4 py-8">
+  `}const q="http://localhost:8080";async function M(e){try{const t=await fetch(`${q}/api/bookings`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(e)});if(!t.ok){const s=await t.json();throw new Error(s.message||"Failed to submit booking")}return await t.json()}catch(t){throw console.error("Booking API error:",t),t}}function F(){const e=document.getElementById("bookingForm");if(!e)return;const t=e.querySelectorAll(".step");let s=1;const i=p=>{t.forEach(l=>{l.classList.add("hidden"),l.classList.remove("block")});const d=e.querySelector(`[data-step="${p}"]`);d.classList.remove("hidden"),d.classList.add("block")};i(s);const o=document.getElementById("pickup"),a=document.getElementById("dropoff"),n=e.querySelector("select"),r=document.getElementById("date"),c=document.getElementById("time"),w=document.getElementById("name"),k=document.getElementById("phone"),B=document.getElementById("email");document.getElementById("nextBtn").onclick=()=>{if(!o.value||!a.value){alert("Please fill pickup and drop-off locations");return}s=2,i(s)},document.getElementById("backBtn").onclick=()=>{s=1,i(s)},e.onsubmit=async p=>{p.preventDefault();const d={event_type:n.value,pickup_location:o.value,dropoff_location:a.value,trip_date:r.value,pickup_time:c.value,full_name:w.value,phone:k.value,email:B.value};console.log("Payload sent to API:",d);try{const l=await M(d);console.log("Booking successful:",l),alert("Booking submitted successfully!"),location.hash="#/drivers"}catch(l){alert("Failed to submit booking: "+l.message)}}}function u(){const e=Array.from(document.querySelectorAll("[data-trip-tab]")),t=Array.from(document.querySelectorAll("[data-trip-section]"));if(!e.length||!t.length)return;const s="flex-1 px-4 py-3 rounded-xl font-semibold btn-accent shadow-sm flex items-center justify-center gap-2",i="flex-1 px-4 py-3 rounded-xl font-semibold bg-white/15 text-white hover:bg-white/20 transition flex items-center justify-center gap-2";function o(n){e.forEach(r=>{const c=r.dataset.tripTab===n;r.className=c?s:i}),t.forEach(r=>{r.classList.toggle("hidden",r.dataset.tripSection!==n)})}e.forEach(n=>{n.addEventListener("click",()=>o(n.dataset.tripTab))});const a=document.querySelector("[data-trip-default]")?.dataset.tripDefault;o(a||e[0].dataset.tripTab)}const f={"/login":I,"/home":v,"/drivers":g,"/driver-dashboard":E,"/profile":T,"/customer-profile":S,"/customer-notifications":j,"/customer-messages":A,"/my-bookings":x,"/install-bukabus":D,"/notifications":L,"/messages":N,"/my-trips":b};async function R(e){(!e||e==="/")&&(e="/home");const t=["/driver-dashboard","/profile","/notifications","/messages","/my-trips","/drivers"],s=["/home","/customer-profile","/customer-notifications","/customer-messages","/my-bookings"],i=t.some(a=>e===a)||e.startsWith("/booking/")||e.startsWith("/send-quote/"),o=s.some(a=>e===a);try{i?localStorage.setItem("appRole","driver"):o&&localStorage.setItem("appRole","customer")}catch{}if(e.startsWith("/booking/")){const a=e.split("/")[2]||"";return P(a)}if(e.startsWith("/send-quote/")){const a=e.split("/")[2]||"";return C(a)}if(!f[e])return"<h2 class='text-center'>404 – Page not found</h2>";if(e==="/drivers")try{const n=await(await fetch("https://jsonplaceholder.typicode.com/users")).json();return g(n)}catch{return"<p>Failed to load drivers.</p>"}if(e==="/home"){const a=v();return setTimeout(()=>{F()},0),a}if(e==="/my-trips"){const a=b();return setTimeout(()=>{u()},0),a}if(e==="/my-bookings"){const a=x();return setTimeout(()=>{u()},0),a}return f[e]()}function O(){try{return localStorage.getItem("appRole")||"customer"}catch{return"customer"}}function W(){const t=O()==="driver";return`
+    <details class="relative z-[60]">
+      <summary class="list-none cursor-pointer inline-flex items-center justify-center w-9 h-9 rounded-full bg-white/15 hover:bg-white/25 transition ring-1 ring-white/20">
+        D
+      </summary>
+      <div class="absolute right-0 mt-3 w-52 rounded-2xl menu-accent shadow-xl overflow-hidden z-[60]">
+        <a class="block px-4 py-3 text-sm font-medium transition" href="${t?"#/profile":"#/customer-profile"}">Profile</a>
+        <a class="block px-4 py-3 text-sm font-medium transition" href="${t?"#/notifications":"#/customer-notifications"}">Notifications</a>
+        <a class="block px-4 py-3 text-sm font-medium transition" href="${t?"#/my-trips":"#/my-bookings"}">My ${t?"Trips":"Bookings"}</a>
+      </div>
+    </details>
+  `}function G(){return`
+    <details class="relative z-[60]">
+      <summary class="list-none cursor-pointer inline-flex items-center justify-center w-9 h-9 rounded-full bg-white/15 hover:bg-white/25 transition ring-1 ring-white/20">
+        C
+      </summary>
+      <div class="absolute right-0 mt-3 w-52 rounded-2xl menu-accent shadow-xl overflow-hidden z-[60]">
+        <a class="block mx-2 my-2 px-4 py-3 text-sm font-bold rounded-xl text-center shadow-md bg-[#0b5cff]" href="#/home">Find a bus</a>
+        <a class="block px-4 py-3 text-sm font-medium transition" href="#/customer-profile">Profile</a>
+        <a class="block px-4 py-3 text-sm font-medium transition" href="#/customer-notifications">Notifications</a>
+        <a class="block px-4 py-3 text-sm font-medium transition" href="#/my-bookings">My Bookings</a>
+      </div>
+    </details>
+  `}function Q(e,t={}){const{hideTopBar:s=!1}=t,i=s?"app-main app-main-no-topbar":"app-main app-main-with-topbar";return`
+    <div class="app-shell">
 
-      <div class="w-full max-w-md space-y-6">
+      <div class="w-full">
 
         ${s?"":`
         <!-- Top bar -->
-        <header class="app-card px-5 py-4 flex items-center justify-between">
+        <header class="app-card app-topbar px-4 sm:px-5 py-3 sm:py-4 flex items-center justify-between">
           <div class="flex items-center gap-3">
-            <span class="text-2xl">🚌</span>
+            <span class="text-sm font-semibold tracking-wide">BUS</span>
             <div class="leading-tight">
               <div class="text-lg font-semibold tracking-wide text-white">
                 BOOKINABUS
@@ -1251,23 +1233,28 @@
             </div>
           </div>
 
-          <details class="relative">
-            <summary class="list-none cursor-pointer w-9 h-9 rounded-full bg-white/15 flex items-center justify-center text-sm hover:bg-white/25 transition">
-              👤
-            </summary>
-            <div class="absolute right-0 mt-3 w-48 rounded-xl menu-accent shadow-lg overflow-hidden">
-              <a class="block px-4 py-3 text-sm font-medium transition" href="#/home">Login as user</a>
-              <a class="block px-4 py-3 text-sm font-medium transition" href="#/driver-dashboard">Login as driver</a>
-            </div>
-          </details>
+          <div class="flex items-center gap-2">
+            ${W()}
+            ${G()}
+
+            <details class="relative">
+              <summary class="list-none cursor-pointer w-9 h-9 rounded-full bg-white/15 flex items-center justify-center text-sm hover:bg-white/25 transition">
+                U
+              </summary>
+              <div class="absolute right-0 mt-3 w-48 rounded-xl menu-accent shadow-lg overflow-hidden">
+                <a class="block px-4 py-3 text-sm font-medium transition" href="#/home">Login as user</a>
+                <a class="block px-4 py-3 text-sm font-medium transition" href="#/driver-dashboard">Login as driver</a>
+              </div>
+            </details>
+          </div>
         </header>
         `}
 
         <!-- Injected pages -->
-        <main class="app-card p-6 space-y-6">
+        <main class="${i}">
           ${e??""}
         </main>
 
       </div>
     </div>
-  `}async function _(){if(window.matchMedia("(display-mode: standalone)").matches||window.navigator.standalone===!0)return!0;if("getInstalledRelatedApps"in navigator)try{const e=await navigator.getInstalledRelatedApps();if(Array.isArray(e)&&e.length>0)return!0}catch{}return!1}function U(){window.addEventListener("beforeinstallprompt",e=>{e.preventDefault(),window.__deferredInstallPrompt=e;const t=document.getElementById("installAppBtn");t&&(t.removeAttribute("disabled"),t.classList.remove("opacity-60","cursor-not-allowed"))}),window.addEventListener("appinstalled",()=>{window.__deferredInstallPrompt=null,window.location.hash="#/home"})}function Y({isInstalled:e}){const t=document.getElementById("installAppBtn");if(t){if(e){t.textContent="Open App",t.removeAttribute("disabled"),t.classList.remove("opacity-60","cursor-not-allowed"),t.addEventListener("click",()=>{window.location.hash="#/home"});return}t.addEventListener("click",async()=>{if(!window.__deferredInstallPrompt)return;window.__deferredInstallPrompt.prompt();const{outcome:s}=await window.__deferredInstallPrompt.userChoice;s==="accepted"&&(window.__deferredInstallPrompt=null)})}}async function w(){const e=window.location.hash.length>0,s=window.location.hash.replace("#","")||"/home",a=await _();if(!e){if(a){window.location.hash="#/home";return}window.location.hash="#/install-bukabus";return}const i=await G(s),o=document.getElementById("app"),n=s==="/install-bukabus";o.innerHTML=Q(i,{hideTopBar:n}),s==="/install-bukabus"&&Y({isInstalled:a})}window.addEventListener("load",w);window.addEventListener("hashchange",w);U();function k(e){document.querySelectorAll("details[open]").forEach(t=>{t.contains(e.target)||t.removeAttribute("open")})}document.addEventListener("click",k);document.addEventListener("touchstart",k);"serviceWorker"in navigator&&window.addEventListener("load",()=>{navigator.serviceWorker.register("./sw.js").then(e=>{console.log("✅ Service Worker registered:",e.scope)}).catch(e=>{console.error("❌ Service Worker failed:",e)})});async function H(){if("serviceWorker"in navigator){const e=await navigator.serviceWorker.getRegistrations();for(const t of e)await t.unregister()}window.location.reload(!0)}document.addEventListener("DOMContentLoaded",()=>{const e=document.getElementById("updateBtn");e&&e.addEventListener("click",H)});
+  `}async function _(){if(window.matchMedia("(display-mode: standalone)").matches||window.navigator.standalone===!0)return!0;if("getInstalledRelatedApps"in navigator)try{const e=await navigator.getInstalledRelatedApps();if(Array.isArray(e)&&e.length>0)return!0}catch{}return!1}function U(){window.addEventListener("beforeinstallprompt",e=>{e.preventDefault(),window.__deferredInstallPrompt=e;const t=document.getElementById("installAppBtn");t&&(t.removeAttribute("disabled"),t.classList.remove("opacity-60","cursor-not-allowed"))}),window.addEventListener("appinstalled",()=>{window.__deferredInstallPrompt=null,window.location.hash="#/home"})}function Y({isInstalled:e}){const t=document.getElementById("installAppBtn"),s=document.getElementById("continueBrowserBtn");if(s&&s.addEventListener("click",()=>{window.location.hash="#/home"}),!!t){if(e){t.textContent="Open App",t.removeAttribute("disabled"),t.classList.remove("opacity-60","cursor-not-allowed"),t.addEventListener("click",()=>{window.location.hash="#/home"});return}t.addEventListener("click",async()=>{if(!window.__deferredInstallPrompt)return;window.__deferredInstallPrompt.prompt();const{outcome:i}=await window.__deferredInstallPrompt.userChoice;i==="accepted"&&(window.__deferredInstallPrompt=null)})}}async function y(){const e=window.location.hash.length>0,s=window.location.hash.replace("#","")||"/home",i=await _();if(!e){if(i){window.location.hash="#/home";return}window.location.hash="#/install-bukabus";return}const o=await R(s),a=document.getElementById("app"),n=s==="/install-bukabus";a.innerHTML=Q(o,{hideTopBar:n}),s==="/install-bukabus"&&Y({isInstalled:i})}window.addEventListener("load",y);window.addEventListener("hashchange",y);U();function h(e){document.querySelectorAll("details[open]").forEach(t=>{t.contains(e.target)||t.removeAttribute("open")})}document.addEventListener("click",h);document.addEventListener("touchstart",h);"serviceWorker"in navigator&&window.addEventListener("load",()=>{navigator.serviceWorker.register("./sw.js").then(e=>{console.log("✅ Service Worker registered:",e.scope)}).catch(e=>{console.error("❌ Service Worker failed:",e)})});async function H(){if("serviceWorker"in navigator){const e=await navigator.serviceWorker.getRegistrations();for(const t of e)await t.unregister()}window.location.reload(!0)}document.addEventListener("DOMContentLoaded",()=>{const e=document.getElementById("updateBtn");e&&e.addEventListener("click",H)});
