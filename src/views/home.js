@@ -1,6 +1,6 @@
 export default function Home() {
   return `
-    <section class="max-w-[900px] mx-auto mt-8 p-6 app-card">
+    <section class="app-page">
 
 
       <form id="bookingForm" class="space-y-6">
@@ -34,7 +34,7 @@ export default function Home() {
           </div>
 
           <!-- Pickup & Drop-off -->
-          <div class="flex flex-col md:flex-row gap-5 mb-5">
+          <div class="flex flex-col sm:flex-row gap-5 mb-5">
             <div class="flex-1">
               <label class="block mb-2 font-medium text-gray-200">
                 Pickup Location
@@ -61,7 +61,7 @@ export default function Home() {
           </div>
 
           <!-- Date & Time -->
-          <div class="flex flex-col md:flex-row gap-5 mb-6">
+          <div class="flex flex-col sm:flex-row gap-5 mb-6">
             <div class="flex-1">
               <label class="block mb-2 font-medium text-gray-200">
                 Trip Date
@@ -104,7 +104,7 @@ export default function Home() {
             Contact Information
           </h3>
 
-          <div class="flex flex-col md:flex-row gap-5 mb-5">
+          <div class="flex flex-col sm:flex-row gap-5 mb-5">
             <div class="flex-1">
               <label class="block mb-2 font-medium text-gray-200">
                 Full Name
@@ -164,3 +164,9 @@ export default function Home() {
     </section>
   `;
 }
+
+
+
+
+
+

@@ -1,6 +1,6 @@
 export default function InstallApp() {
   return `
-    <section class="max-w-[900px] mx-auto mt-8 p-6 app-card">
+    <section class="app-page">
       <header class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
         <div class="flex items-center gap-4">
           <div class="h-14 w-14 rounded-2xl bg-[var(--brand-accent)] shadow-lg"></div>
@@ -15,9 +15,14 @@ export default function InstallApp() {
       </header>
 
       <div class="mt-8 flex flex-col md:flex-row gap-4">
-        <button id="installAppBtn" disabled class="flex-1 px-6 py-4 rounded-xl text-lg font-semibold btn-accent shadow-lg opacity-60 cursor-not-allowed">
-          Install App
-        </button>
+        <div class="flex-1 flex flex-col gap-3">
+          <button id="installAppBtn" disabled class="w-full px-6 py-4 rounded-xl text-lg font-semibold btn-accent shadow-lg opacity-60 cursor-not-allowed">
+            Install App
+          </button>
+          <button id="continueBrowserBtn" type="button" class="w-full px-6 py-3 rounded-xl text-sm font-semibold bg-white/10 hover:bg-white/20 transition text-white border border-white/20">
+            Continue in Browser (Testing)
+          </button>
+        </div>
         <div class="flex-1 rounded-xl border border-white/10 bg-white/5 p-4 text-sm text-white/80">
           Works like a native app. No app store download required.
         </div>
@@ -98,3 +103,9 @@ export default function InstallApp() {
     </section>
   `;
 }
+
+
+
+
+
+

@@ -40,6 +40,14 @@ export function registerInstallPromptHandler() {
 
 export function wireInstallButton({ isInstalled }) {
   const installBtn = document.getElementById("installAppBtn");
+  const continueBrowserBtn = document.getElementById("continueBrowserBtn");
+
+  if (continueBrowserBtn) {
+    continueBrowserBtn.addEventListener("click", () => {
+      window.location.hash = "#/home";
+    });
+  }
+
   if (!installBtn) return;
 
   if (isInstalled) {

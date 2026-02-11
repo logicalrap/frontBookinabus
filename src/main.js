@@ -1,4 +1,4 @@
-import "./style.css";
+  import "./style.css";
 import "./styles/booking.css";
 
 import { loadRoute } from "./router.js";
@@ -89,7 +89,7 @@ async function forceUpdate() {
     }
   }
 
-  window.location.reload(true);
+  window.location.reload(true); 
 }
 
 document.addEventListener("DOMContentLoaded", () => {

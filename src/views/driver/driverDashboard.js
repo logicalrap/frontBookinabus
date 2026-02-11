@@ -1,14 +1,12 @@
 import { bookingRequests } from "../../data/bookingRequests.js";
-import MenuColumn from "../../components/MenuColumn.js";
 
 export default function DriverDashboard() {
   return `
-    <section class="max-w-[900px] mx-auto mt-8 p-6 app-card space-y-6">
+    <section class="app-page space-y-6">
 
-      <div class="flex items-start gap-4">
-        ${MenuColumn()}
+      <div>
 
-        <div class="flex-1 space-y-4">
+        <div class="space-y-4">
           <header>
             <h2 class="text-2xl font-semibold text-[var(--color-secondary-heading)]">Driver Dashboard</h2>
             <p class="mt-2 text-gray-200">Incoming trip requests waiting for action</p>
@@ -54,6 +52,12 @@ export default function DriverDashboard() {
     </section>
   `;
 }
+
+
+
+
+
+
 
 
 

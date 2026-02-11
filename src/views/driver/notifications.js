@@ -1,4 +1,3 @@
-import MenuColumn from "../../components/MenuColumn.js";
 
 export default function Notifications() {
   const notifications = [
@@ -40,11 +39,10 @@ export default function Notifications() {
   };
 
   return `
-    <section class="max-w-[900px] mx-auto mt-8 p-6 app-card">
-      <div class="flex items-start gap-4">
-        ${MenuColumn()}
+    <section class="app-page">
+      <div>
 
-        <div class="flex-1 space-y-6">
+        <div class="space-y-6">
           <header class="flex flex-col gap-2">
             <div>
               <h2 class="text-2xl font-semibold text-[var(--color-secondary-heading)]">Notifications</h2>
@@ -89,4 +87,10 @@ export default function Notifications() {
     </section>
   `;
 }
+
+
+
+
+
+
 

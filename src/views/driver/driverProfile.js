@@ -1,4 +1,3 @@
-import MenuColumn from "../../components/MenuColumn.js";
 
 export default function DriverProfile() {
   const driver = {
@@ -18,11 +17,10 @@ export default function DriverProfile() {
   };
 
   return `
-    <section class="max-w-[900px] mx-auto mt-8 p-6 app-card">
-      <div class="flex items-start gap-4 min-w-0">
-        ${MenuColumn()}
+    <section class="app-page">
+      <div class="min-w-0">
 
-        <div class="flex-1 space-y-6 min-w-0">
+        <div class="space-y-6 min-w-0">
           <header class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div>
               <h2 class="text-2xl font-semibold text-[var(--color-secondary-heading)]">Driver Profile</h2>
@@ -78,6 +76,12 @@ export default function DriverProfile() {
     </section>
   `;
 }
+
+
+
+
+
+
 
 
 

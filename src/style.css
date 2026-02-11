@@ -8,10 +8,10 @@
    ====================================================== */
 @theme {
   /* Brand colors */
-  --color-primary: #1f05b3;
+  --color-primary: #2456d3;
   --color-primary-action: #0a60a7;
-  --color-background: #f9f9f9;
-  --color-primary-bg: #1f05b3;
+  --color-background: #edf3ff;
+  --color-primary-bg: #2456d3;
   --color-secondary: #0f3e7a;
   --color-primary-action-hover: #f97316;
   --color-secondary-hover: #0c3263;
@@ -37,13 +37,29 @@
   :root {
     font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
     color-scheme: light dark;
+    --app-topbar-height: 72px;
+  }
+
+  html {
+    height: 100%;
+    overflow-x: hidden;
   }
 
   body {
     margin: 0;
     min-height: 100vh;
-    background-color: var(--color-background);
+    background-color: var(--color-primary);
     color: var(--color-text-default);
+    display: block;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #app {
+    width: 100%;
+    min-height: 100dvh;
   }
 
   a {
@@ -56,11 +72,46 @@
    Semantic utilities (Tailwind-style, reusable)
    ====================================================== */
 @layer utilities {
+  .app-shell {
+    width: 100%;
+    min-height: 100dvh;
+    background-color: var(--color-primary);
+  }
+
+  .app-topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+  }
+
+  .app-main {
+    width: 100%;
+  }
+
+  .app-main-with-topbar {
+    padding-top: var(--app-topbar-height);
+  }
+
+  .app-main-no-topbar .app-page {
+    min-height: 100dvh;
+  }
+
+  .app-page {
+    width: 100%;
+    min-height: calc(100dvh - var(--app-topbar-height));
+    padding: 0;
+    background-color: var(--color-primary);
+    color: var(--color-text-default);
+  }
+
   /* Card wrapper */
   .app-card {
     background-color: var(--color-primary);
-    border-radius: var(--radius-card);
-    box-shadow: var(--shadow-card);
+    border-radius: 0;
+    box-shadow: none;
+    border: 0;
     color: var(--color-text-default);
   }
 
@@ -68,5 +119,17 @@
   .btn-primary {
     background-color: var(--color-primary-action);
     color: black;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --app-topbar-height: 64px;
+  }
+
+  .app-card {
+    border-radius: 0;
+    box-shadow: none;
+    border: 0;
   }
 }

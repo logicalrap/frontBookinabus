@@ -5,7 +5,7 @@ export default function BookingDetails(requestId) {
 
   if (!booking) {
     return `
-      <section class="max-w-[900px] mx-auto mt-8 p-6 app-card space-y-6">
+      <section class="app-page space-y-6">
         <div class="bg-white text-black rounded-2xl shadow-lg p-6">
           <h2 class="text-2xl font-semibold">Booking not found</h2>
           <p class="mt-2 text-sm text-gray-600">We could not find a booking for ${requestId}.</p>
@@ -18,7 +18,7 @@ export default function BookingDetails(requestId) {
   }
 
   return `
-    <section class="max-w-[900px] mx-auto mt-8 p-6 app-card space-y-6">
+    <section class="app-page space-y-6">
       <div class="bg-white text-black rounded-2xl shadow-lg p-6">
         <div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
           <div>
@@ -61,3 +61,9 @@ export default function BookingDetails(requestId) {
     </section>
   `;
 }
+
+
+
+
+
+

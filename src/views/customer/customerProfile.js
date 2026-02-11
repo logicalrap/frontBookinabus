@@ -1,4 +1,3 @@
-import CustomerMenuColumn from "../../components/CustomerMenuColumn.js";
 
 export default function CustomerProfile() {
   const customer = {
@@ -9,11 +8,10 @@ export default function CustomerProfile() {
   };
 
   return `
-    <section class="max-w-[900px] mx-auto mt-8 p-6 app-card">
-      <div class="flex items-start gap-4 min-w-0">
-        ${CustomerMenuColumn()}
+    <section class="app-page">
+      <div class="min-w-0">
 
-        <div class="flex-1 space-y-6 min-w-0">
+        <div class="space-y-6 min-w-0">
           <header class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div>
               <h2 class="text-2xl font-semibold text-[var(--color-secondary-heading)]">Customer Profile</h2>
@@ -65,3 +63,9 @@ export default function CustomerProfile() {
     </section>
   `;
 }
+
+
+
+
+
+

@@ -6,7 +6,7 @@ export default function SendQuote(requestId) {
 
   if (!booking) {
     return `
-      <section class="max-w-[900px] mx-auto mt-8 p-6 app-card space-y-6">
+      <section class="app-page space-y-6">
         <div class="bg-white text-black rounded-2xl shadow-lg p-6">
           <h2 class="text-2xl font-semibold">Quote request not found</h2>
           <p class="mt-2 text-sm text-gray-600">We could not find a booking for ${requestId}.</p>
@@ -19,7 +19,7 @@ export default function SendQuote(requestId) {
   }
 
   return `
-    <section class="max-w-[900px] mx-auto mt-8 p-6 app-card space-y-6">
+    <section class="app-page space-y-6">
       <div class="bg-white text-black rounded-2xl shadow-lg p-6 space-y-6">
         <header class="space-y-2">
           <p class="text-xs uppercase tracking-widest text-[var(--color-primary-action)] font-semibold">Send Quote</p>
@@ -287,3 +287,9 @@ export default function SendQuote(requestId) {
     </section>
   `;
 }
+
+
+
+
+
+

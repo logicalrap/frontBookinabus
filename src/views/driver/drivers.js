@@ -3,7 +3,7 @@ export default function Drivers(drivers = []) {
   const otherDrivers = drivers.slice(3);
 
   return `
-    <section class="max-w-[900px] mx-auto mt-8 p-6 app-card flex flex-col space-y-6 pb-20 relative">
+    <section class="app-page flex flex-col space-y-6 pb-20 relative">
 
       <!-- Header -->
       <header class="text-center mb-4">
@@ -40,9 +40,9 @@ export default function Drivers(drivers = []) {
           .join("")}
       </div>
 
-      <!-- Other drivers note: fixed at bottom but aligned with app-card -->
+      <!-- Other drivers note: full-width mobile app banner -->
       ${otherDrivers.length > 0 ? `
-        <div class="fixed bottom-0 left-1/2 transform -translate-x-1/2 max-w-[900px] w-[90%] bg-[var(--color-primary)] text-white text-center p-4 font-medium rounded-lg shadow-md">
+        <div class="fixed bottom-0 left-0 right-0 bg-[var(--color-primary)] text-white text-center p-4 font-medium">
           Other drivers will contact you shortly
         </div>
       ` : ''}
@@ -50,3 +50,9 @@ export default function Drivers(drivers = []) {
     </section>
   `;
 }
+
+
+
+
+
+

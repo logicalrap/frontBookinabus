@@ -13,7 +13,7 @@ export default function Login() {
     : "Login to book and manage your trips.";
 
   return `
-    <section class="max-w-[420px] mx-auto mt-16 p-6 app-card">
+    <section class="app-page">
 
       <!-- Header -->
       <header class="text-center mb-8">
@@ -73,3 +73,9 @@ export default function Login() {
     </section>
   `;
 }
+
+
+
+
+
+
