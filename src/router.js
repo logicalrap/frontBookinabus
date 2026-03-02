@@ -13,7 +13,15 @@ import CustomerNotifications from "./views/customer/customerNotifications.js";
 import CustomerMessages from "./views/customer/customerMessages.js";
 import MyBookings from "./views/customer/myBookings.js";
 import InstallApp from "./views/installApp.js";
+import Contact from "./views/contact.js";
+import Terms from "./views/terms.js";
+import Privacy from "./views/privacy.js";
+import About from "./views/about.js";
+import Bravobravo256 from "./views/admin/bravobravo256.js";
+import Bravobravo256Login from "./views/admin/bravobravo256Login.js";
 import { initBookingForm } from "./logic/bookingForm.js";
+import { initAdminLogin, initAdminPanel } from "./logic/admin.js";
+import { initContactForm } from "./logic/messages.js";
 import { initTripsTabs } from "./logic/trips.js";
 
 // route table
@@ -27,6 +35,12 @@ const routes = {
   "/customer-notifications": CustomerNotifications,
   "/customer-messages": CustomerMessages,
   "/my-bookings": MyBookings,
+  "/contact": Contact,
+  "/about": About,
+  "/terms": Terms,
+  "/privacy": Privacy,
+  "/bravobravo256": Bravobravo256,
+  "/bravobravo256-login": Bravobravo256Login,
   "/install-bukabus": InstallApp,
   "/notifications": Notifications,
   "/messages": Messages,
@@ -74,19 +88,6 @@ export async function loadRoute(path) {
   }
 
   // ===============================
-  // DRIVERS (fetch API)
-  // ===============================
-  if (path === "/drivers") {
-    try {
-      const res = await fetch("https://jsonplaceholder.typicode.com/users");
-      const data = await res.json();
-      return Drivers(data); // RETURN instead of inject
-    } catch (err) {
-      return "<p>Failed to load drivers.</p>";
-    }
-  }
-
-  // ===============================
   // HOME
   // ===============================
   if (path === "/home") {
@@ -121,6 +122,45 @@ export async function loadRoute(path) {
 
     setTimeout(() => {
       initTripsTabs();
+    }, 0);
+
+    return html;
+  }
+
+  // ===============================
+  // CONTACT
+  // ===============================
+  if (path === "/contact") {
+    const html = Contact();
+
+    setTimeout(() => {
+      initContactForm();
+    }, 0);
+
+    return html;
+  }
+
+  // ===============================
+  // ADMIN DASHBOARD
+  // ===============================
+  if (path === "/bravobravo256") {
+    const html = Bravobravo256();
+
+    setTimeout(() => {
+      initAdminPanel();
+    }, 0);
+
+    return html;
+  }
+
+  // ===============================
+  // ADMIN LOGIN
+  // ===============================
+  if (path === "/bravobravo256-login") {
+    const html = Bravobravo256Login();
+
+    setTimeout(() => {
+      initAdminLogin();
     }, 0);
 
     return html;

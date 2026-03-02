@@ -1,4 +1,20 @@
-import { createBooking } from "./api.js";
+import { db } from "../firebase.js";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+
+async function saveBooking(data) {
+  await addDoc(collection(db, "bookings"), {
+    event_type: data.event_type,
+    pickup_location: data.pickup_location,
+    dropoff_location: data.dropoff_location,
+    route: `${data.pickup_location} -> ${data.dropoff_location}`,
+    trip_date: data.trip_date,
+    pickup_time: data.pickup_time,
+    full_name: data.full_name,
+    phone: data.phone,
+    email: data.email || "",
+    createdAt: serverTimestamp(),
+  });
+}
 
 export function initBookingForm() {
   const form = document.getElementById("bookingForm");
@@ -58,15 +74,16 @@ export function initBookingForm() {
       email: email.value,
     };
 
-    console.log("Payload sent to API:", bookingData);
+    console.log("Payload sent to Firestore:", bookingData);
 
     try {
-      const result = await createBooking(bookingData);
-      console.log("Booking successful:", result);
-      alert("Booking submitted successfully!");
+      await saveBooking(bookingData);
+      console.log("Booking saved to Firestore");
+      alert("Booking saved!");
       location.hash = "#/drivers";
     } catch (err) {
-      alert("Failed to submit booking: " + err.message);
+      console.error("Error adding booking:", err);
+      alert("Failed to save booking: " + err.message);
     }
   };
 }

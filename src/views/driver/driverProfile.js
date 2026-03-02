@@ -1,19 +1,19 @@
 
 export default function DriverProfile() {
   const driver = {
-    name: "Samuel Adeyemi",
-    role: "Lead Event Driver",
-    license: "LIC-9021-NA",
-    phone: "+234 803 555 2110",
-    email: "samuel.adeyemi@bookinabus.com",
-    location: "Lagos, Nigeria"
+    name: "Mike Tembo",
+    role: "N/A",
+    license: "N/A",
+    phone: "+260 771 094 845",
+    email: "N/A",
+    location: "Lusaka"
   };
 
   const vehicle = {
     number: "BUS-2241",
-    type: "Luxury Coach",
-    capacity: "56 seats",
-    plate: "LND 542 AZ"
+    type: "Rosa",
+    capacity: "30 seats",
+    plate: "ABM 1851"
   };
 
   return `
@@ -30,15 +30,18 @@ export default function DriverProfile() {
           </header>
 
           <div class="space-y-5">
-            <div class="flex items-center gap-4 bg-white/10 rounded-2xl p-5 min-w-0">
-              <div class="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center text-xl font-semibold">
-                SA
+            <div class="flex items-center justify-between gap-4 bg-white/10 rounded-2xl p-5 min-w-0">
+              <div class="flex items-center gap-4 min-w-0">
+                <div class="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center text-xl font-semibold">
+                  MT
+                </div>
+                <div class="min-w-0">
+                  <div class="text-xl font-semibold">${driver.name}</div>
+                  <div class="text-sm text-gray-200 break-words">${driver.role}</div>
+                  <div class="text-sm text-gray-200 break-words">${driver.location}</div>
+                </div>
               </div>
-              <div class="min-w-0">
-                <div class="text-xl font-semibold">${driver.name}</div>
-                <div class="text-sm text-gray-200 break-words">${driver.role}</div>
-                <div class="text-sm text-gray-200 break-words">${driver.location}</div>
-              </div>
+              <a href="tel:${driver.phone}" class="shrink-0 px-4 py-2 rounded-lg font-semibold btn-accent transition">Call</a>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">

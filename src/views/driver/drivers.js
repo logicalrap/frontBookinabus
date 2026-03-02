@@ -1,7 +1,4 @@
-export default function Drivers(drivers = []) {
-  const recommendedDrivers = drivers.slice(0, 8);
-  const otherDrivers = drivers.slice(3);
-
+export default function Drivers() {
   return `
     <section class="app-page flex flex-col space-y-6 pb-20 relative">
 
@@ -11,41 +8,26 @@ export default function Drivers(drivers = []) {
         <p class="mt-2 text-gray-200">Our top recommended drivers for your trip</p>
       </header>
 
-      <!-- Recommended Drivers -->
-      <div class="space-y-4">
-        ${recommendedDrivers
-          .map(
-            driver => `
-          <div class="bg-white text-black rounded-lg shadow-md p-4 hover:shadow-lg transition duration-300 flex items-center justify-between gap-4">
-
-            <!-- Driver Info -->
-            <div class="flex-1">
-              <h3 class="text-lg font-medium">${driver.name}</h3>
-              <p class="text-sm">${driver.email}</p>
-              <span class="mt-2 inline-block px-2 py-1 bg-blue-100 text-blue-800 text-xs font-semibold rounded-full">Recommended</span>
-            </div>
-
-            <!-- Driver Image -->
-            <div class="w-16 h-16 flex-shrink-0">
-              <img 
-                src="${driver.photo || 'https://via.placeholder.com/64'}" 
-                alt="${driver.name}" 
-                class="w-16 h-16 rounded-full object-cover border border-gray-200"
-              />
-            </div>
-
+      <!-- Static Featured Driver -->
+      <div
+        class="relative bg-white text-black rounded-lg shadow-md p-4 hover:shadow-lg transition duration-300 flex items-center justify-between gap-4"
+      >
+        <a href="#/profile" aria-label="View Mike Tembo profile" class="absolute inset-0 rounded-lg"></a>
+        <div class="flex-1">
+          <h3 class="text-lg font-medium relative z-10">Mike Tembo</h3>
+          <span class="mt-2 inline-block px-2 py-1 bg-blue-100 text-blue-800 text-xs font-semibold rounded-full">Featured</span>
+        </div>
+        <div class="flex items-center gap-3 relative z-10">
+          <a href="tel:+260771094845" class="shrink-0 px-4 py-2 rounded-lg font-semibold btn-accent transition relative z-20">Call</a>
+          <div class="w-16 h-16 flex-shrink-0 rounded-full bg-gray-200 border border-gray-300 flex items-center justify-center text-base font-semibold">
+            MT
           </div>
-        `
-          )
-          .join("")}
+        </div>
       </div>
 
-      <!-- Other drivers note: full-width mobile app banner -->
-      ${otherDrivers.length > 0 ? `
-        <div class="fixed bottom-0 left-0 right-0 bg-[var(--color-primary)] text-white text-center p-4 font-medium">
-          Other drivers will contact you shortly
-        </div>
-      ` : ''}
+      <div class="fixed left-4 right-4 bottom-24 z-30 mx-auto max-w-md rounded-xl border border-white/25 bg-black/30 backdrop-blur-md px-4 py-3 text-center text-sm font-medium text-white shadow-lg">
+        Other drivers will contact you shortly.
+      </div>
       
     </section>
   `;

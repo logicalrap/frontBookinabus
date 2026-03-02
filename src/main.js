@@ -15,17 +15,19 @@ import {
 async function router() {
   const hasExplicitHash = window.location.hash.length > 0;
   const hash = window.location.hash.replace("#", "");
-  const path = hash || "/home";
+  const path = (hash.split("?")[0] || "/home").trim();
 
   const isInstalled = await detectInstalled();
 
   // Only auto-redirect on first visit (no explicit hash)
   if (!hasExplicitHash) {
-    if (isInstalled) {
-      window.location.hash = "#/home";
-      return;
-    }
-    window.location.hash = "#/install-bukabus";
+    window.location.hash = isInstalled ? "#/home" : "#/install-bukabus";
+    return;
+  }
+
+  // Installed users should not stay on the install screen.
+  if (isInstalled && path === "/install-bukabus") {
+    window.location.hash = "#/home";
     return;
   }
 
@@ -63,7 +65,7 @@ document.addEventListener("touchstart", closeMenusOnOutsideClick);
 // =============================
 // SERVICE WORKER
 // =============================
-if ("serviceWorker" in navigator) {
+if ("serviceWorker" in navigator && import.meta.env.PROD) {
   window.addEventListener("load", () => {
     navigator.serviceWorker
       .register("./sw.js")
@@ -73,6 +75,13 @@ if ("serviceWorker" in navigator) {
       .catch((err) => {
         console.error("❌ Service Worker failed:", err);
       });
+  });
+}
+
+if ("serviceWorker" in navigator && !import.meta.env.PROD) {
+  window.addEventListener("load", async () => {
+    const registrations = await navigator.serviceWorker.getRegistrations();
+    await Promise.all(registrations.map((registration) => registration.unregister()));
   });
 }
 

@@ -99,6 +99,7 @@ export default function InstallApp() {
         <a class="hover:text-white" href="#/about">About</a>
         <a class="hover:text-white" href="#/contact">Contact</a>
         <a class="hover:text-white" href="#/terms">Terms</a>
+        <a class="hover:text-white" href="#/privacy">Privacy</a>
       </footer>
     </section>
   `;
