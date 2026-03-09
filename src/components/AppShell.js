@@ -21,12 +21,12 @@ export default function AppShell(content, options = {}) {
           <a href="#/home" class="flex items-center gap-3">
             <img
               src="/icons/bookinabus.png"
-              alt="BookinaBus logo"
+              alt="Bukabus logo"
               class="w-9 h-9 sm:w-10 sm:h-10 object-contain rounded-md"
             />
             <div class="leading-tight">
               <div class="text-lg font-semibold tracking-wide text-white">
-                BOOKINABUS
+                BUKABUS
               </div>
               <div class="text-xs uppercase tracking-widest brand-accent">
                 Event Transport Booking

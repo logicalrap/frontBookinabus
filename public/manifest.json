@@ -1,12 +1,12 @@
 {
-  "name": "BookinaBus",
-  "short_name": "BookinaBus",
+  "name": "Bukabus",
+  "short_name": "Bukabus",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#0078d7",
-  "description": "BookinaBus - simple, fast PWA demo built with Vite + Vanilla JS.",
+  "description": "Bukabus - simple, fast PWA demo built with Vite + Vanilla JS.",
   "icons": [
     {
       "src": "./icons/bookinabus.png",

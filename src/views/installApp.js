@@ -3,14 +3,20 @@ export default function InstallApp() {
     <section class="app-page">
       <header class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
         <div class="flex items-center gap-4">
-          <div class="h-14 w-14 rounded-2xl bg-[var(--brand-accent)] shadow-lg"></div>
+          <div class="h-14 w-14 rounded-2xl bg-white/10 shadow-lg flex items-center justify-center">
+            <img
+              src="/icons/bookinabus.png"
+              alt="Bukabus logo"
+              class="w-10 h-10 object-contain rounded-md"
+            />
+          </div>
           <div>
-            <div class="text-xs uppercase tracking-widest brand-accent">BookinaBus</div>
+            <div class="text-xs uppercase tracking-widest brand-accent">Bukabus</div>
             <h1 class="text-3xl font-semibold text-white">Install the app in seconds</h1>
           </div>
         </div>
         <div class="text-sm text-white/70 max-w-[320px]">
-          Save it to your phone for instant bookings, faster quotes, and real-time trip updates.
+          Save it to your phone for instant bookings and faster quotes.
         </div>
       </header>
 
@@ -20,7 +26,7 @@ export default function InstallApp() {
             Install App
           </button>
           <button id="continueBrowserBtn" type="button" class="w-full px-6 py-3 rounded-xl text-sm font-semibold bg-white/10 hover:bg-white/20 transition text-white border border-white/20">
-            Continue in Browser (Testing)
+            Continue in Browser
           </button>
         </div>
         <div class="flex-1 rounded-xl border border-white/10 bg-white/5 p-4 text-sm text-white/80">
@@ -60,7 +66,7 @@ export default function InstallApp() {
           <ul class="text-sm text-white/80 space-y-2">
             <li>Get qualified trip requests</li>
             <li>Send quotes with confidence</li>
-            <li>Track trips and payouts faster</li>
+            <li>Manage trip requests in one place</li>
           </ul>
         </div>
       </section>
@@ -82,7 +88,7 @@ export default function InstallApp() {
 
       <section class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
         <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-          <div class="text-sm brand-accent mb-2">BookinaBus Promise</div>
+          <div class="text-sm brand-accent mb-2">Bukabus Promise</div>
           <div class="text-white/80 text-sm">Reliable trips, transparent pricing, and fast support.</div>
         </div>
         <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
@@ -95,12 +101,6 @@ export default function InstallApp() {
         </div>
       </section>
 
-      <footer class="mt-10 pt-6 border-t border-white/10 flex flex-wrap gap-4 text-sm text-white/70">
-        <a class="hover:text-white" href="#/about">About</a>
-        <a class="hover:text-white" href="#/contact">Contact</a>
-        <a class="hover:text-white" href="#/terms">Terms</a>
-        <a class="hover:text-white" href="#/privacy">Privacy</a>
-      </footer>
     </section>
   `;
 }

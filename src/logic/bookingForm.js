@@ -79,7 +79,7 @@ export function initBookingForm() {
     try {
       await saveBooking(bookingData);
       console.log("Booking saved to Firestore");
-      alert("Booking saved!");
+      alert("Booking request sent!");
       location.hash = "#/drivers";
     } catch (err) {
       console.error("Error adding booking:", err);
